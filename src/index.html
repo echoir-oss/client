@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <title>Echoir</title>
+  </head>
+
+  <body>
+    <div data-tauri-drag-region class="titlebar">
+      <img src="assets/echoir-strip.svg" alt="Echoir Logo" class="echoir-logo">
+      <div class="search-bar-wrapper">
+        <div class="search-container">
+          <img src="assets/search.svg" alt="Search" class="search-icon" />
+          <input class="search-bar-titlebar" placeholder="Search across the entire platform" />
+        </div>        
+      </div>
+      <div class="titlebar-buttons">
+        <div class="titlebar-button" id="titlebar-minimize">
+          <img
+            src="assets/minimize.svg"
+            alt="minimize"
+          />
+        </div>
+        <div class="titlebar-button" id="titlebar-maximize">
+          <img
+            src="assets/maximize.svg"
+            alt="maximize"
+          />
+        </div>
+        <div class="titlebar-button" id="titlebar-close">
+          <img src="assets/close.svg" alt="close" />
+        </div>
+      </div>
+    </div>
+    <main class="container">
+    </main>
+  </body>
+  <script type="module" src="/main.js" defer></script>
+</html>

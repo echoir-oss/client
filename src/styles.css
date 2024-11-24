@@ -1,0 +1,86 @@
+* {
+  font-family: 'Host Grostek', 'Instrument Sans', system-ui;
+}
+
+:root {
+  font-size: 16px;
+  color: #fff;
+  background-color: #030908;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.titlebar {
+  height: 50px;
+  background: #030908;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.titlebar-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.titlebar-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  opacity: 80%;
+  user-select: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.titlebar-button:hover {
+  opacity: 100%;
+  transform: scale(1.1);
+}
+
+.echoir-logo {
+  pointer-events: none;
+}
+
+.search-bar-wrapper {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  display: inline-block;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.search-bar-titlebar {
+  width: 400px;
+  border: none;
+  background-color: #121717;
+  font-size: 14px;
+  color: white;
+  padding: 12px 12px 12px 48px;
+  border-radius: 12px;
+}
+
+.container {
+  margin-top: 75px;
+  padding: 5px;
+}
