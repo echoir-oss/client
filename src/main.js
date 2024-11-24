@@ -10,3 +10,7 @@ document
 document
   .getElementById('titlebar-close')
   ?.addEventListener('click', () => appWindow.close());
+
+function toggleActiveState(element) {
+  element.classList.toggle('active');
+}
