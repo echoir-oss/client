@@ -1,5 +1,5 @@
-import { getCurrentWindow } from '/@tauri-apps/api/window';
-const appWindow = getCurrentWindow();
+const { getCurrentWindow } = window.__TAURI__.window;
+const appWindow = getCurrentWindow(); 
 
 document
   .getElementById('titlebar-minimize')
@@ -10,7 +10,3 @@ document
 document
   .getElementById('titlebar-close')
   ?.addEventListener('click', () => appWindow.close());
-
-function toggleActiveState(element) {
-  element.classList.toggle('active');
-}

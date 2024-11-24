@@ -37,8 +37,8 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   opacity: 80%;
   user-select: none;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -70,6 +70,10 @@
   pointer-events: none;
 }
 
+.search-icon.active {
+  transform: translateY(-53%);
+}
+
 .search-bar-titlebar {
   width: 400px;
   border: none;
@@ -79,11 +83,17 @@
   padding: 9px 12px 9px 48px;
   border-radius: 12px;
   transition: box-shadow 0.2s ease;
-
+  outline: none;
 }
 
-.search-bar-titlebar.active {
+input.search-bar-titlebar.active {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid #16A085;
+}
+
+.search-bar-titlebar:focus {
+  outline: none;
+  border: none;
 }
 
 .container {
