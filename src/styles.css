@@ -37,8 +37,8 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
   opacity: 80%;
   user-select: none;
   transition: transform 0.3s ease, opacity 0.3s ease;
