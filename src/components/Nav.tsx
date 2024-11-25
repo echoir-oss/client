@@ -5,8 +5,8 @@ import * as tauri from "~/api/tauri";
 const app = tauri.window.getCurrentWindow();
 
 export default function Nav(): JSX.Element {
-    return <div data-tauri-drag-region class="h-14 bg-bg select-none flex justify-between items-center px-6 fixed top-0 inset-x-0">
-        <A href="/">
+    return <div data-tauri-drag-region class="navbar h-14 bg-bg select-none flex justify-between items-center px-6 fixed top-0 inset-x-0">
+        <A href="/" class="echoir-icon">
             <svg width="78" height="21" viewBox="0 0 78 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.1783 19.6855L6.27313 19.6939C6.25048 19.6928 6.204 19.713 6.18135 19.7118L1.75304 19.7069L1.70775 19.7045C1.43596 19.6903 1.22254 19.4292 1.21413 19.1563L1.21137 1.44135L1.21374 1.39605C1.22799 1.12426 1.49018 0.888177 1.76196 0.902421L5.89584 0.891962L5.98643 0.89671L12.0275 0.895362L12.0728 0.897736C12.3446 0.911979 12.5807 1.17418 12.5891 1.44715L12.5637 5.39758L12.5614 5.44288C12.5471 5.71467 12.2849 5.95075 12.012 5.95916L6.72064 5.95438L6.73181 7.90813L10.7859 8.1206C11.0577 8.13485 11.3176 8.37558 11.3021 8.67002L11.2998 8.71531L11.0729 12.1782C11.0336 12.4941 10.7941 12.7314 10.477 12.7148L6.71734 12.5178L6.7202 14.6301L12.2392 14.6241L12.2845 14.6264C12.5789 14.6419 12.815 14.9041 12.8007 15.1758L12.7528 19.1251C12.7373 19.4195 12.4966 19.6794 12.1783 19.6855Z" fill="white" />
                 <path d="M26.144 8.03766L25.0781 10.782C24.9874 11.0541 24.7379 11.2809 24.4658 11.2809C24.375 11.2809 24.2617 11.2356 24.1709 11.1675C23.7627 10.8273 22.9689 10.5778 22.1751 10.5778C21.5855 10.5778 19.6124 10.7139 19.6124 13.186C19.6124 14.7056 20.701 15.7035 22.1751 15.7035C23.1504 15.7035 24.2843 15.2726 25.3729 14.2747C25.509 14.1386 25.7131 14.0252 25.9173 14.0252C26.076 14.0252 26.2574 14.1159 26.4162 14.3881C26.8244 15.1592 27.0966 15.5675 27.4595 16.3159C27.5275 16.452 27.5729 16.6107 27.5729 16.7695C27.5729 17.0417 27.4595 17.2912 27.1873 17.5633C25.3503 19.3097 23.173 20.0808 21.1319 20.0808C17.3671 20.0808 14.0332 17.4499 14.0332 13.4582C14.0332 8.37786 18.0928 6.31396 21.8349 6.31396C24.3524 6.31396 26.1667 7.31189 26.1667 7.87889C26.1667 7.92425 26.1667 7.99229 26.144 8.03766Z" fill="white" />
@@ -17,46 +17,46 @@ export default function Nav(): JSX.Element {
                 <path d="M73.2421 19.8154L68.7238 19.7298C68.4523 19.7108 68.2378 19.5282 68.2553 19.2781L68.3798 8.39368C68.3973 8.14352 68.6155 7.9493 68.8643 7.9667L71.4975 8.02514C72.744 7.75619 73.9321 7.67168 75.0633 7.75079C75.8325 7.80458 76.5733 7.94017 77.2645 8.13514C77.598 8.24226 77.7221 8.41852 77.7046 8.66868C77.6987 8.75206 77.6703 8.83387 77.6404 8.93652L76.7787 11.83C76.6905 12.1171 76.454 12.2472 76.1825 12.2282C76.1146 12.2235 76.0256 12.1963 75.9366 12.1691C75.5819 12.0396 75.2016 11.9501 74.817 11.9232C74.5003 11.9011 74.1806 11.9206 73.8128 11.9787L73.7267 19.3884L73.7237 19.4301C73.7077 19.6594 73.491 19.8328 73.2421 19.8154Z" fill="white" />
             </svg>
         </A>
-        <div class="flex gap-2 items-center">
-            <div class="relative cursor-pointer">
+        <div class="nav-center flex gap-2 items-center">
+            <div class="nav-pfp relative cursor-pointer">
                 <img src="https://cdn.discordapp.com/avatars/1250950455798927450/f57a2e80bc5e358e31e364426dd2b31b.webp?size=80" class="size-9 rounded-xl" />
                 <svg viewBox="0 0 95 95" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0.5 left-0.5 size-9">
                     <circle cx="73.573" cy="73.573" r="21.364" fill="#f84040" stroke="#010b09" stroke-width={12.66} />
                     <path d="M65.561,73.573l16.023,-0" stroke="white" stroke-width={5.02} />
                 </svg>
             </div>
-            <div class="relative">
+            <div class="search-bar relative">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-3 -translate-y-1/2 size-5 pointer-events-none">
                     <path d="M24.1836 24.1777L29.4791 29.4733" stroke="white" stroke-opacity={0.98} stroke-width={2.3} />
                     <circle cx={17.1223} cy={17.1174} r={9.44106} stroke="white" stroke-opacity={0.98} stroke-width={2.3} />
                 </svg>
                 <input placeholder="Search across the entire platform" class="search-bar-titlebar w-[400px] bg-layer text-white text-sm py-[9px] px-3 pl-10 rounded-xl outline-none placeholder:text-muted shadow-[inset_0_-2px_0_0_transparent] focus:shadow-[inset_0_-2px_0_0_#16A085] focus:outline-none focus:ring-0 focus:border-transparent transition-shadow duration-200" />
             </div>
-            <div class="flex gap-1">
-                <div class="size-9 flex items-center justify-center cursor-pointer bg-layer rounded-l-xl rounded-r-md">
+            <div class="nav-buttons flex gap-1">
+                <div class="nav-button size-9 flex items-center justify-center cursor-pointer bg-layer rounded-l-xl rounded-r-md">
                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4 ml-0.5">
                         <path opacity="0.9" d="M8.00198 0.612134C8.07682 0.381806 8.40267 0.381806 8.47751 0.612134L10.2107 5.94638C10.2442 6.04938 10.3402 6.11912 10.4485 6.11912H16.0572C16.2994 6.11912 16.4001 6.42903 16.2042 6.57138L11.6666 9.86812C11.579 9.93178 11.5423 10.0446 11.5758 10.1476L13.309 15.4819C13.3838 15.7122 13.1202 15.9037 12.9243 15.7614L8.38669 12.4646C8.29907 12.401 8.18042 12.401 8.0928 12.4646L3.55522 15.7614C3.35929 15.9037 3.09567 15.7122 3.17051 15.4819L4.90371 10.1476C4.93718 10.0446 4.90052 9.93178 4.81289 9.86812L0.275313 6.57138C0.0793849 6.42903 0.180079 6.11912 0.42226 6.11912H6.03102C6.13932 6.11912 6.23531 6.04938 6.26878 5.94638L8.00198 0.612134Z" fill="white" />
                     </svg>
                 </div>
-                <div class="size-9 flex items-center justify-center cursor-pointer bg-layer rounded-l-md rounded-r-xl">
+                <div class="nav-button size-9 flex items-center justify-center cursor-pointer bg-layer rounded-l-md rounded-r-xl">
                     <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M16 13.8296V8.19059V3.17036C16 1.9717 15.0283 1 13.8296 1H3.17036C1.9717 1 1 1.97171 1 3.17036V8.19059V13.8296C1 15.0283 1.9717 16 3.17036 16H13.8296C15.0283 16 16 15.0283 16 13.8296ZM12.624 8.19059C13.3732 8.19059 13.9805 7.58327 13.9805 6.83411V4.04427C13.9805 3.29511 13.3732 2.6878 12.624 2.6878H4.45056C3.7014 2.6878 3.09408 3.29511 3.09408 4.04427V6.83411C3.09408 7.58327 3.7014 8.19059 4.45056 8.19059H6.34216C6.41057 9.24481 7.34976 10.0801 8.49832 10.0801C9.64688 10.0801 10.5861 9.24481 10.6545 8.19059H12.624Z" fill="white" opacity="0.85" />
                     </svg>
                 </div>
             </div>
         </div>
-        <div class="flex flex-row gap-4">
-            <div class="inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 scale-110" onClick={() => app.minimize()}>
+        <div class="window-controls flex flex-row gap-4">
+            <div class="window-control inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 scale-110" onClick={() => app.minimize()}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Minimize">
                     <path d="M3.79688 10H16.1992" stroke="white" stroke-opacity="0.45" stroke-width="1.875" stroke-linecap="round" />
                 </svg>
             </div>
-            <div class="inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 scale-110" onClick={() => app.toggleMaximize()}>
+            <div class="window-control inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 scale-110" onClick={() => app.toggleMaximize()}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Maximize">
                     <rect x="3.06445" y="3.06348" width="13.8733" height="13.8733" rx="1.5625" stroke="white" stroke-opacity="0.45" stroke-width="1.875" />
                 </svg>
             </div>
-            <div class="inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 scale-110" onClick={() => app.close()}>
+            <div class="window-control inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 scale-110" onClick={() => app.close()}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Close">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.7638 10.2059L2.74414 16.2814L4.07607 17.6011L10.0836 11.5379L16.1528 17.6635L17.4848 16.3438L11.4033 10.2059L17.7309 3.81969L16.3989 2.5L10.0836 8.87394L3.82998 2.56238L2.49805 3.88207L8.7638 10.2059Z" fill="white" fill-opacity="0.45" />
                 </svg>
