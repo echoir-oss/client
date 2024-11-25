@@ -14,7 +14,7 @@ export default function Nav(): JSX.Element {
             <path d="M63.1688 6.12121C64.7256 6.12121 65.9941 4.85265 65.9941 3.2958C65.9941 1.71972 64.7256 0.451172 63.1688 0.451172C61.5927 0.451172 60.3242 1.71972 60.3242 3.2958C60.3242 4.85265 61.5927 6.12121 63.1688 6.12121Z" fill="white" />
             <path d="M73.2421 19.8154L68.7238 19.7298C68.4523 19.7108 68.2378 19.5282 68.2553 19.2781L68.3798 8.39368C68.3973 8.14352 68.6155 7.9493 68.8643 7.9667L71.4975 8.02514C72.744 7.75619 73.9321 7.67168 75.0633 7.75079C75.8325 7.80458 76.5733 7.94017 77.2645 8.13514C77.598 8.24226 77.7221 8.41852 77.7046 8.66868C77.6987 8.75206 77.6703 8.83387 77.6404 8.93652L76.7787 11.83C76.6905 12.1171 76.454 12.2472 76.1825 12.2282C76.1146 12.2235 76.0256 12.1963 75.9366 12.1691C75.5819 12.0396 75.2016 11.9501 74.817 11.9232C74.5003 11.9011 74.1806 11.9206 73.8128 11.9787L73.7267 19.3884L73.7237 19.4301C73.7077 19.6594 73.491 19.8328 73.2421 19.8154Z" fill="white" />
         </svg>
-        <div class="flex gap-3 items-center">
+        <div class="flex gap-2 items-center">
             <div class="relative cursor-pointer">
                 <img src="https://cdn.discordapp.com/avatars/1250950455798927450/f57a2e80bc5e358e31e364426dd2b31b.webp?size=80" class="size-9 rounded-xl" />
                 <svg viewBox="0 0 95 95" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0.5 left-0.5 size-9">
@@ -27,15 +27,15 @@ export default function Nav(): JSX.Element {
                     <path d="M24.1836 24.1777L29.4791 29.4733" stroke="white" stroke-opacity={0.98} stroke-width={2.3} />
                     <circle cx={17.1223} cy={17.1174} r={9.44106} stroke="white" stroke-opacity={0.98} stroke-width={2.3} />
                 </svg>
-                <input placeholder="Search across the entire platform" class="w-96 bg-layer text-sm py-2 pl-11 pr-3 rounded-xl transition-shadow duration-200 placeholder:text-muted active:shadow-[0_6px_12px] active:shadow-black/40 focus:border-b-2 focus:border-b-brand outline-none" />
+                <input placeholder="Search across the entire platform" class="search-bar-titlebar w-[400px] bg-[#121717] text-white text-sm py-[9px] px-[12px] pl-[40px] rounded-[12px] outline-none placeholder:text-muted shadow-[inset_0_-2px_0_0_transparent] focus:shadow-[inset_0_-2px_0_0_#16A085] focus:outline-none focus:ring-0 focus:border-transparent transition-shadow duration-200" />
             </div>
-            <div class="flex gap-0.5">
-                <div class="rounded-l-xl size-9 flex items-center justify-center cursor-pointer bg-layer">
+            <div class="flex gap-1">
+                <div class="size-9 flex items-center justify-center cursor-pointer bg-layer rounded-tl-[12px] rounded-bl-[12px] rounded-tr-[6px] rounded-br-[6px]">
                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4 ml-0.5">
                         <path opacity="0.9" d="M8.00198 0.612134C8.07682 0.381806 8.40267 0.381806 8.47751 0.612134L10.2107 5.94638C10.2442 6.04938 10.3402 6.11912 10.4485 6.11912H16.0572C16.2994 6.11912 16.4001 6.42903 16.2042 6.57138L11.6666 9.86812C11.579 9.93178 11.5423 10.0446 11.5758 10.1476L13.309 15.4819C13.3838 15.7122 13.1202 15.9037 12.9243 15.7614L8.38669 12.4646C8.29907 12.401 8.18042 12.401 8.0928 12.4646L3.55522 15.7614C3.35929 15.9037 3.09567 15.7122 3.17051 15.4819L4.90371 10.1476C4.93718 10.0446 4.90052 9.93178 4.81289 9.86812L0.275313 6.57138C0.0793849 6.42903 0.180079 6.11912 0.42226 6.11912H6.03102C6.13932 6.11912 6.23531 6.04938 6.26878 5.94638L8.00198 0.612134Z" fill="white" />
                     </svg>
                 </div>
-                <div class="rounded-r-xl size-9 flex items-center justify-center cursor-pointer bg-layer">
+                <div class="size-9 flex items-center justify-center cursor-pointer bg-layer rounded-tl-[6px] rounded-bl-[6px] rounded-tr-[12px] rounded-br-[12px]">
                     <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M16 13.8296V8.19059V3.17036C16 1.9717 15.0283 1 13.8296 1H3.17036C1.9717 1 1 1.97171 1 3.17036V8.19059V13.8296C1 15.0283 1.9717 16 3.17036 16H13.8296C15.0283 16 16 15.0283 16 13.8296ZM12.624 8.19059C13.3732 8.19059 13.9805 7.58327 13.9805 6.83411V4.04427C13.9805 3.29511 13.3732 2.6878 12.624 2.6878H4.45056C3.7014 2.6878 3.09408 3.29511 3.09408 4.04427V6.83411C3.09408 7.58327 3.7014 8.19059 4.45056 8.19059H6.34216C6.41057 9.24481 7.34976 10.0801 8.49832 10.0801C9.64688 10.0801 10.5861 9.24481 10.6545 8.19059H12.624Z" fill="white" opacity="0.85" />
                     </svg>
