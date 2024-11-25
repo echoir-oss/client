@@ -4,7 +4,10 @@
   "version": "0.1.0",
   "identifier": "fr.echoir.desktop",
   "build": {
-    "frontendDist": "../src"
+    "frontendDist": "../.output/public",
+    "beforeBuildCommand": "pnpm build",
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:6812"
   },
   "app": {
     "withGlobalTauri": true,
@@ -31,6 +34,7 @@
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "publisher": "Echoir"
   }
 }
