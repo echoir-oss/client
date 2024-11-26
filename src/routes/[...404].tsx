@@ -7,7 +7,7 @@ export default function NotFound() {
             <h1 class="font-bold text-4xl">Not found</h1>
             <h3>
                 <span class="text-muted">Looks like we couldn't find that URL. </span>
-                <A href="/" class="underline text-brand">Go home</A>
+                <A href="/" class="text-brand">Go home</A>
             </h3>
         </div>
     </Page>
