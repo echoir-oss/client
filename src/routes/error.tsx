@@ -7,7 +7,7 @@ export default function NotFound() {
             <h1 class="font-bold text-4xl">UI Error</h1>
             <h3>
                 <span class="text-muted">A critical error occurred in Echoir. </span>
-                <A href="#" class="underline text-brand" onClick={() => location.href = "/"}>Reload</A>
+                <A href="#" class="text-brand" onClick={() => location.href = "/"}>Reload</A>
             </h3>
         </div>
     </Page>
