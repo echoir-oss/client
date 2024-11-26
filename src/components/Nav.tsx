@@ -29,13 +29,13 @@ export default function Nav(): JSX.Element {
                 </svg>
                 <input placeholder="Search across the entire platform" class="search-bar-titlebar w-[400px] bg-[#121717] text-white text-sm py-[9px] px-[12px] pl-[40px] rounded-[12px] outline-none placeholder:text-muted shadow-[inset_0_-2px_0_0_transparent] focus:shadow-[inset_0_-2px_0_0_#16A085] focus:outline-none focus:ring-0 focus:border-transparent transition-shadow duration-200" />
             </div>
-            <div class="flex gap-1">
-                <div class="size-9 flex items-center justify-center cursor-pointer bg-layer rounded-tl-[12px] rounded-bl-[12px] rounded-tr-[6px] rounded-br-[6px]">
+            <div class="flex gap-[3px]">
+                <div class="size-9 flex items-center justify-center cursor-pointer bg-layer rounded-tl-[12px] rounded-bl-[12px] rounded-tr-[4px] rounded-br-[4px]">
                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4 ml-0.5">
                         <path opacity="0.9" d="M8.00198 0.612134C8.07682 0.381806 8.40267 0.381806 8.47751 0.612134L10.2107 5.94638C10.2442 6.04938 10.3402 6.11912 10.4485 6.11912H16.0572C16.2994 6.11912 16.4001 6.42903 16.2042 6.57138L11.6666 9.86812C11.579 9.93178 11.5423 10.0446 11.5758 10.1476L13.309 15.4819C13.3838 15.7122 13.1202 15.9037 12.9243 15.7614L8.38669 12.4646C8.29907 12.401 8.18042 12.401 8.0928 12.4646L3.55522 15.7614C3.35929 15.9037 3.09567 15.7122 3.17051 15.4819L4.90371 10.1476C4.93718 10.0446 4.90052 9.93178 4.81289 9.86812L0.275313 6.57138C0.0793849 6.42903 0.180079 6.11912 0.42226 6.11912H6.03102C6.13932 6.11912 6.23531 6.04938 6.26878 5.94638L8.00198 0.612134Z" fill="white" />
                     </svg>
                 </div>
-                <div class="size-9 flex items-center justify-center cursor-pointer bg-layer rounded-tl-[6px] rounded-bl-[6px] rounded-tr-[12px] rounded-br-[12px]">
+                <div class="size-9 flex items-center justify-center cursor-pointer bg-layer rounded-tl-[4px] rounded-bl-[4px] rounded-tr-[12px] rounded-br-[12px]">
                     <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M16 13.8296V8.19059V3.17036C16 1.9717 15.0283 1 13.8296 1H3.17036C1.9717 1 1 1.97171 1 3.17036V8.19059V13.8296C1 15.0283 1.9717 16 3.17036 16H13.8296C15.0283 16 16 15.0283 16 13.8296ZM12.624 8.19059C13.3732 8.19059 13.9805 7.58327 13.9805 6.83411V4.04427C13.9805 3.29511 13.3732 2.6878 12.624 2.6878H4.45056C3.7014 2.6878 3.09408 3.29511 3.09408 4.04427V6.83411C3.09408 7.58327 3.7014 8.19059 4.45056 8.19059H6.34216C6.41057 9.24481 7.34976 10.0801 8.49832 10.0801C9.64688 10.0801 10.5861 9.24481 10.6545 8.19059H12.624Z" fill="white" opacity="0.85" />
                     </svg>
