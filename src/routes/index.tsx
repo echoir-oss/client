@@ -12,5 +12,6 @@ export default function Home() {
             </A>
         </div>
         <div class="dm-container rounded-xl bg-bgLayer w-64 h-full"></div>
+        <div class="primary-content rounded-xl bg-bgLayer w-full h-full"></div>
     </Page>
 }
