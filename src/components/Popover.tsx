@@ -5,11 +5,8 @@ export default function Popover(props: ParentProps<{ contents: () => JSX.Element
     let ref: HTMLDivElement = void 0 as any;
     const [rect, setRect] = createSignal(null as unknown as DOMRect);
 
-    createEffect(() => {
-        console.log("hi", rect())
-    })
-
-    queueMicrotask(() => setRect(ref.getBoundingClientRect()))
+    // queueMicrotask will run **after the DOM has been rendered** at least in sync components.
+    queueMicrotask(() => setRect(ref.getBoundingClientRect()));
 
     return <div class="popover-wrapper">
         <div onClick={() => setRect(ref.getBoundingClientRect()) && setOpen(!open())} ref={ref}>{props.children}</div>
