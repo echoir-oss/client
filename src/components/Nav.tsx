@@ -1,6 +1,7 @@
 import { A } from "@solidjs/router";
 import { JSX } from "solid-js";
 import * as tauri from "~/api/tauri";
+import Popover from "./Popover";
 
 const app = tauri.window.getCurrentWindow();
 
@@ -18,13 +19,31 @@ export default function Nav(): JSX.Element {
             </svg>
         </A>
         <div class="nav-center flex gap-2 items-center">
-            <div class="nav-pfp relative cursor-pointer">
-                <img src="https://cdn.discordapp.com/avatars/1250950455798927450/f57a2e80bc5e358e31e364426dd2b31b.webp?size=80" class="size-9 rounded-xl" />
-                <svg viewBox="0 0 95 95" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0.5 left-0.5 size-9">
-                    <circle cx="73.573" cy="73.573" r="21.364" fill="#f84040" stroke="#010b09" stroke-width={12.66} />
-                    <path d="M65.561,73.573l16.023,-0" stroke="white" stroke-width={5.02} />
-                </svg>
-            </div>
+            <Popover contents={() => <div class="user-popover flex flex-col gap-3">
+                <div class="user-popover-top flex items-center gap-3">
+                    <div class="user-popover-pfp relative">
+                        <img src="https://cdn.discordapp.com/avatars/1250950455798927450/f57a2e80bc5e358e31e364426dd2b31b.webp?size=80" class="size-9 rounded-xl" />
+                        <svg viewBox="0 0 95 95" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0.5 left-0.5 size-9">
+                            <circle cx="73.573" cy="73.573" r="21.364" fill="#f84040" stroke="#010b09" stroke-width={12.66} />
+                            <path d="M65.561,73.573l16.023,-0" stroke="white" stroke-width={5.02} />
+                        </svg>
+                    </div>
+                    <div class="user-popover-username flex flex-col">
+                        <span class="leading-4">patrick</span>
+                        <span class="text-muted text-sm">@patricktbp</span>
+                        <div class="w-8 mt-1 h-px border-t border-muted/50"></div>
+                        <span class="text-muted text-sm cursor-pointer">set a status...</span>
+                    </div>
+                </div>
+            </div>}>
+                <div class="nav-pfp relative cursor-pointer">
+                    <img src="https://cdn.discordapp.com/avatars/1250950455798927450/f57a2e80bc5e358e31e364426dd2b31b.webp?size=80" class="size-9 rounded-xl" />
+                    <svg viewBox="0 0 95 95" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0.5 left-0.5 size-9">
+                        <circle cx="73.573" cy="73.573" r="21.364" fill="#f84040" stroke="#010b09" stroke-width={12.66} />
+                        <path d="M65.561,73.573l16.023,-0" stroke="white" stroke-width={5.02} />
+                    </svg>
+                </div>
+            </Popover>
             <div class="search-bar relative">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-3 -translate-y-1/2 size-5 pointer-events-none">
                     <path d="M24.1836 24.1777L29.4791 29.4733" stroke="white" stroke-opacity={0.98} stroke-width={2.3} />
