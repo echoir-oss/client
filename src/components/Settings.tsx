@@ -1,5 +1,6 @@
-import { createSignal, JSX, onCleanup, ParentProps } from "solid-js";
+import { createResource, createSignal, DEV, JSX, onCleanup, ParentProps } from "solid-js";
 import { open, setOpen, SettingsContext } from "./settings_ctx";
+import * as tauri from "~/api/tauri";
 
 export { setOpen, SettingsContext };
 
@@ -91,8 +92,10 @@ export default function Settings(): JSX.Element {
             <Settings.Section>Miscellaneous</Settings.Section>
             <Settings.Item page={SettingsPage.About}>About Echoir</Settings.Item>
             <Settings.Separator />
-            <div class="text-[13px] opacity-50 mb-1 px-2">
-                <p>Echoir 0.0.1 (a67f4db)</p>
+            <div class="settings-version-info text-xs text-white/50 mb-1 px-2">
+                <p>Echoir {tauri.appVersion}{DEV && "@dev"} ({COMMIT_HASH})</p>
+                <p>Tauri {tauri.version}</p>
+                <p>System: {tauri.systemInfo}</p>
             </div>
         </aside>
         <div class="settings-page w-[64rem] rounded-xl p-4 bg-bgLayer h-full overflow-x-hidden overflow-y-auto">
