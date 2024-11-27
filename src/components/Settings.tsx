@@ -6,7 +6,8 @@ export { setOpen, SettingsContext };
 export const SettingsProvider = (props: ParentProps) => <SettingsContext.Provider value={{ value: [open, setOpen] }}>{props.children}</SettingsContext.Provider>;
 enum SettingsPage {
     Account,
-    About
+    About,
+    Themes
 }
 
 enum TransitionState {
@@ -48,7 +49,8 @@ const Pages = {
                 <span class={`transition-transform duration-1000 w-full flex justify-center absolute left-0 top-0 ${state() === TransitionState.BeforeRun ? "translate-y-full invisible" : "translate-y-0"}`}>{messages[curr()]}</span>
             </h3>
         </div>
-    }
+    },
+    [SettingsPage.Themes]: () => "coming soon"
 }
 
 export default function Settings(): JSX.Element {
@@ -84,7 +86,9 @@ export default function Settings(): JSX.Element {
         <aside class="settings-nav flex flex-col rounded-xl bg-bgLayer min-w-64 h-full p-4">
             <Settings.Section>User Settings</Settings.Section>
             <Settings.Item page={SettingsPage.Account}>Account</Settings.Item>
+            <Settings.Item page={SettingsPage.Themes}>Themes</Settings.Item>
             <Settings.Separator />
+            <Settings.Section>Miscellaneous</Settings.Section>
             <Settings.Item page={SettingsPage.About}>About Echoir</Settings.Item>
             <Settings.Separator />
             <div class="text-[13px] opacity-50 mb-1 px-2">
