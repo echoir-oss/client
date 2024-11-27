@@ -21,7 +21,7 @@ const Pages = {
         const [curr, setCurr] = createSignal(0);
         const [last, setLast] = createSignal(0);
         const [state, setState] = createSignal(TransitionState.None);
-        const messages = ["Made by developers, tailored for you.", "Optimized for minimal CPU/RAM usage.", "Private is private."];
+        const messages = ["It's time to ditch Discord and go with Echoir.", "Made by developers, tailored for you.", "Optimized for minimal CPU/RAM usage.", "Private is private."];
         const interval = setInterval(() => {
             const next = (curr() + 1) % messages.length;
             setLast(curr());
@@ -31,7 +31,7 @@ const Pages = {
                 setState(TransitionState.Running);
                 setTimeout(() => setState(TransitionState.None), 1000)
             }, 1000);
-        }, 4500);
+        }, 3000);
         onCleanup(() => clearInterval(interval));
         return <div class="flex flex-col gap-2 justify-center w-full h-full">
             <svg viewBox="0 0 78 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-12 w-fi" aria-label="Echoir logo">
@@ -86,6 +86,10 @@ export default function Settings(): JSX.Element {
             <Settings.Item page={SettingsPage.Account}>Account</Settings.Item>
             <Settings.Separator />
             <Settings.Item page={SettingsPage.About}>About Echoir</Settings.Item>
+            <Settings.Separator />
+            <div class="text-[13px] opacity-50 mb-1 px-2">
+                <p>Echoir 0.0.1 (a67f4db)</p>
+            </div>
         </aside>
         <div class="settings-page w-[64rem] rounded-xl p-4 bg-bgLayer h-full overflow-x-hidden overflow-y-auto">
             {Pages[page()]()}
