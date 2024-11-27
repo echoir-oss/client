@@ -2,12 +2,12 @@ import { A } from "@solidjs/router";
 import Page from "~/components/Page";
 
 export default function NotFound() {
-    return <Page title="404 Not Found" noBg>
+    return <Page title="UI Error" noBg>
         <div class="w-full h-full flex flex-col items-center justify-center">
-            <h1 class="font-bold text-4xl">Not found</h1>
-            <h3>
-                <span class="text-muted">Looks like we couldn't find that URL. </span>
-                <A href="/" class="text-brand">Go home</A>
+            <h1 class="font-bold text-4xl">Link not found</h1>
+            <h3 class="text-center flex flex-col items-center justify-center">
+                <span class="text-muted mt-[4px]">Looks like we couldn't find that URL. </span><br></br>
+                <A href="#" class="text-white px-[20px] py-[10px] mt-[-12px] bg-brand rounded-md" onClick={() => location.href = "/"}>Go back</A>
             </h3>
         </div>
     </Page>
