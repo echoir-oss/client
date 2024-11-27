@@ -1,7 +1,8 @@
-import { ErrorBoundary, JSX, ParentProps } from "solid-js";
+import { createSignal, ErrorBoundary, JSX, ParentProps, useContext } from "solid-js";
 import Nav from "./Nav";
 import { Title } from "@solidjs/meta";
 import { A, useLocation, useNavigate } from "@solidjs/router";
+import Settings, { SettingsContext } from "./Settings";
 
 export default function Page(props: ParentProps<{ title: string, noBg?: boolean }>): JSX.Element {
     return <ErrorBoundary fallback={err => {
@@ -20,6 +21,7 @@ export default function Page(props: ParentProps<{ title: string, noBg?: boolean 
                 </A>
             </div>
             <div class="dm-list rounded-xl bg-bgLayer min-w-64 h-full"></div>
+            <Settings />
             <div class={`primary-content p-4 rounded-xl ${props.noBg ? "" : "bg-bgLayer "}w-full h-full`}>
                 {props.children}
             </div>

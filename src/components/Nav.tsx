@@ -2,12 +2,13 @@ import { A } from "@solidjs/router";
 import { JSX } from "solid-js";
 import * as tauri from "~/api/tauri";
 import Popover from "./Popover";
+import { setOpen } from "./Settings";
 
 const app = tauri.window.getCurrentWindow();
 
 export default function Nav(): JSX.Element {
-    return <div data-tauri-drag-region class="navbar h-14 bg-bg select-none flex justify-between items-center px-6 fixed top-0 inset-x-0">
-        <A href="/" class="echoir-icon">
+    return <div data-tauri-drag-region class="navbar h-14 bg-bg select-none flex justify-between items-center px-6 fixed top-0 inset-x-0 z-50">
+        <A href="/" class="echoir-icon" onClick={() => setOpen(false)}>
             <svg width="78" height="21" viewBox="0 0 78 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.1783 19.6855L6.27313 19.6939C6.25048 19.6928 6.204 19.713 6.18135 19.7118L1.75304 19.7069L1.70775 19.7045C1.43596 19.6903 1.22254 19.4292 1.21413 19.1563L1.21137 1.44135L1.21374 1.39605C1.22799 1.12426 1.49018 0.888177 1.76196 0.902421L5.89584 0.891962L5.98643 0.89671L12.0275 0.895362L12.0728 0.897736C12.3446 0.911979 12.5807 1.17418 12.5891 1.44715L12.5637 5.39758L12.5614 5.44288C12.5471 5.71467 12.2849 5.95075 12.012 5.95916L6.72064 5.95438L6.73181 7.90813L10.7859 8.1206C11.0577 8.13485 11.3176 8.37558 11.3021 8.67002L11.2998 8.71531L11.0729 12.1782C11.0336 12.4941 10.7941 12.7314 10.477 12.7148L6.71734 12.5178L6.7202 14.6301L12.2392 14.6241L12.2845 14.6264C12.5789 14.6419 12.815 14.9041 12.8007 15.1758L12.7528 19.1251C12.7373 19.4195 12.4966 19.6794 12.1783 19.6855Z" fill="white" />
                 <path d="M26.144 8.03766L25.0781 10.782C24.9874 11.0541 24.7379 11.2809 24.4658 11.2809C24.375 11.2809 24.2617 11.2356 24.1709 11.1675C23.7627 10.8273 22.9689 10.5778 22.1751 10.5778C21.5855 10.5778 19.6124 10.7139 19.6124 13.186C19.6124 14.7056 20.701 15.7035 22.1751 15.7035C23.1504 15.7035 24.2843 15.2726 25.3729 14.2747C25.509 14.1386 25.7131 14.0252 25.9173 14.0252C26.076 14.0252 26.2574 14.1159 26.4162 14.3881C26.8244 15.1592 27.0966 15.5675 27.4595 16.3159C27.5275 16.452 27.5729 16.6107 27.5729 16.7695C27.5729 17.0417 27.4595 17.2912 27.1873 17.5633C25.3503 19.3097 23.173 20.0808 21.1319 20.0808C17.3671 20.0808 14.0332 17.4499 14.0332 13.4582C14.0332 8.37786 18.0928 6.31396 21.8349 6.31396C24.3524 6.31396 26.1667 7.31189 26.1667 7.87889C26.1667 7.92425 26.1667 7.99229 26.144 8.03766Z" fill="white" />
@@ -19,20 +20,29 @@ export default function Nav(): JSX.Element {
             </svg>
         </A>
         <div class="nav-center flex gap-2 items-center">
-            <Popover contents={() => <div class="user-popover flex flex-col gap-3">
-                <div class="user-popover-top flex items-center gap-3">
-                    <div class="user-popover-pfp relative">
-                        <img src="https://cdn.discordapp.com/avatars/1250950455798927450/f57a2e80bc5e358e31e364426dd2b31b.webp?size=80" class="size-9 rounded-xl" />
-                        <svg viewBox="0 0 95 95" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0.5 left-0.5 size-9">
-                            <circle cx="73.573" cy="73.573" r="21.364" fill="#f84040" stroke="#010b09" stroke-width={12.66} />
-                            <path d="M65.561,73.573l16.023,-0" stroke="white" stroke-width={5.02} />
-                        </svg>
-                    </div>
-                    <div class="user-popover-username flex flex-col">
-                        <span class="leading-4">patrick</span>
-                        <span class="text-muted text-sm">@patricktbp</span>
-                        <div class="w-8 mt-1 h-px border-t border-muted/50"></div>
-                        <span class="text-muted text-sm cursor-pointer">set a status...</span>
+            <Popover noPadding contents={({ close }) => <div class="user-popover flex flex-col gap-3 w-64">
+                <div class="user-popover-top relative">
+                    <img class="absolute top-0 left-0 w-64" src="/banner.png" />
+                    <svg viewBox="0 0 34 35" xmlns="http://www.w3.org/2000/svg" class="p-2 bg-white/15 rounded-lg cursor-pointer absolute top-2 right-2 w-8" onClick={() => (close(), setOpen(true))}>
+                        <path d="M13.244,0.339c1.114,-0.223 2.265,-0.339 3.441,-0.339c1.184,0 2.343,0.118 3.464,0.343c0.746,0.15 1.327,0.735 1.472,1.482l0.899,4.642c0.072,0.373 0.458,0.596 0.817,0.472l4.461,-1.54c0.719,-0.248 1.516,-0.037 2.019,0.533c1.521,1.725 2.708,3.754 3.459,5.987c0.242,0.72 0.026,1.515 -0.548,2.013l-3.566,3.095c-0.287,0.25 -0.287,0.695 -0,0.944l3.566,3.096c0.574,0.498 0.79,1.293 0.548,2.013c-0.75,2.232 -1.938,4.262 -3.458,5.987c-0.503,0.57 -1.3,0.781 -2.019,0.533l-4.462,-1.54c-0.359,-0.124 -0.745,0.098 -0.817,0.472l-0.9,4.643c-0.144,0.747 -0.725,1.332 -1.471,1.482c-1.121,0.225 -2.28,0.343 -3.464,0.343c-1.176,-0 -2.327,-0.116 -3.441,-0.339c-0.747,-0.149 -1.329,-0.734 -1.474,-1.482l-0.9,-4.647c-0.072,-0.374 -0.458,-0.596 -0.817,-0.472l-4.478,1.545c-0.718,0.248 -1.515,0.038 -2.018,-0.532c-1.52,-1.723 -2.707,-3.749 -3.459,-5.978c-0.243,-0.72 -0.026,-1.516 0.548,-2.015l3.582,-3.109c0.287,-0.249 0.287,-0.694 -0,-0.944l-3.582,-3.108c-0.574,-0.499 -0.79,-1.295 -0.547,-2.016c0.752,-2.228 1.939,-4.254 3.459,-5.977c0.503,-0.57 1.3,-0.78 2.018,-0.532l4.477,1.545c0.359,0.124 0.745,-0.099 0.817,-0.472l0.9,-4.646c0.145,-0.748 0.727,-1.333 1.474,-1.482Zm3.443,11.536c-3.104,-0 -5.625,2.52 -5.625,5.625c0,3.104 2.521,5.625 5.625,5.625c3.105,-0 5.625,-2.521 5.625,-5.625c0,-3.105 -2.52,-5.625 -5.625,-5.625Z" fill="white" />
+                    </svg>
+                    <div class="h-10" />
+                    <div class="px-4 pb-4">
+                        <div class="user-popover-pfp relative">
+                            <img src="https://cdn.discordapp.com/avatars/1250950455798927450/f57a2e80bc5e358e31e364426dd2b31b.webp?size=80" class="size-16 rounded-3xl border-4 border-bg" />
+                            <svg viewBox="0 0 95 95" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 left-0 size-16">
+                                <circle cx="73.573" cy="73.573" r="21.364" fill="#f84040" stroke="#010b09" stroke-width={10} />
+                                <path d="M65.561,73.573l16.023,-0" stroke="white" stroke-width={5.02} />
+                            </svg>
+                        </div>
+                        <div class="user-popover-details flex flex-col">
+                            <div class="user-popover-username flex items-center gap-1">
+                                <span>patrick</span>
+                                <span class="text-muted text-sm -mt-0.5">@patricktbp</span>
+                            </div>
+                            <div class="w-full mt-1.5 mb-0.5 h-px border-t border-muted/50"></div>
+                            <span class="text-muted text-sm cursor-pointer">set a status...</span>
+                        </div>
                     </div>
                 </div>
             </div>}>

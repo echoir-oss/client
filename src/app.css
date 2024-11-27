@@ -8,6 +8,14 @@
     font-family: 'Host Grotesk', 'Instrument Sans', system-ui;
 }
 
+*::-webkit-scrollbar {
+    @apply w-2;
+}
+
+*::-webkit-scrollbar-thumb {
+    @apply bg-layer rounded-full w-2;
+}
+
 :root {
     @apply bg-bg text-white;
     font-synthesis: none;
