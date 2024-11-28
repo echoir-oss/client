@@ -1,5 +1,5 @@
 import Page from "~/components/Page";
-import Button from "~/components/ui/Button";
+import LinkButton from "~/components/ui/LinkButton";
 
 export default function NotFound() {
     return <Page title="UI Error" noBg>
@@ -7,7 +7,7 @@ export default function NotFound() {
             <h1 class="font-bold text-4xl">Link not found</h1>
             <h3 class="text-center flex flex-col items-center gap-1 mt-1">
                 <span class="text-muted">Looks like we couldn't find that URL.</span>
-                <Button onClick={() => location.href = "/"}>Go back</Button>
+                <LinkButton href="/">Go back</LinkButton>
             </h3>
         </div>
     </Page>

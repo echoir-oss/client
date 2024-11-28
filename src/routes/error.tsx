@@ -1,5 +1,5 @@
 import Page from "~/components/Page";
-import LinkButton from "~/components/ui/LinkButton";
+import Button from "~/components/ui/Button";
 
 export default function Error() {
     return <Page title="UI Error" noBg>
@@ -7,7 +7,7 @@ export default function Error() {
             <h1 class="font-bold text-4xl">UI Error</h1>
             <h3 class="flex flex-col items-center gap-1 mt-1">
                 <span class="text-muted">A component has crashed in Echoir and we need to reload.</span>
-                <LinkButton href="#">Reload</LinkButton>
+                <Button onClick={() => location.href = "/"}>Reload</Button>
             </h3>
         </div>
     </Page>
