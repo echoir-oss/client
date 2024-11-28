@@ -74,7 +74,7 @@ export default function Nav(): JSX.Element {
                 </div>
             </div>
         </div>
-        <div class="window-controls flex flex-row gap-4">
+        <div class="window-controls flex gap-4">
             <div class="window-control inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 scale-110" onClick={() => app.minimize()}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Minimize">
                     <path d="M3.79688 10H16.1992" stroke="white" stroke-opacity="0.45" stroke-width="1.875" stroke-linecap="round" />

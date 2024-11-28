@@ -1,10 +1,11 @@
-import { createSignal, ErrorBoundary, JSX, ParentProps, useContext } from "solid-js";
+import { ErrorBoundary, JSX, ParentProps, useContext } from "solid-js";
 import Nav from "./Nav";
 import { Title } from "@solidjs/meta";
 import { A, useLocation, useNavigate } from "@solidjs/router";
 import Settings, { SettingsContext } from "./Settings";
 
 export default function Page(props: ParentProps<{ title: string, noBg?: boolean }>): JSX.Element {
+    useContext(SettingsContext).value[1](false);
     return <ErrorBoundary fallback={err => {
         console.error("Critical UI Error:", err);
         return void useNavigate()("/error");

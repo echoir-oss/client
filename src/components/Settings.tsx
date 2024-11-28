@@ -1,14 +1,17 @@
 import { createSignal, DEV, JSX, onCleanup, ParentProps } from "solid-js";
 import { open, setOpen, SettingsContext } from "./settings_ctx";
 import * as tauri from "~/api/tauri";
+import { A } from "@solidjs/router";
 
 export { setOpen, SettingsContext };
 
 export const SettingsProvider = (props: ParentProps) => <SettingsContext.Provider value={{ value: [open, setOpen] }}>{props.children}</SettingsContext.Provider>;
 enum SettingsPage {
     Account,
+    Themes,
     About,
-    Themes
+    Routes,
+    Components
 }
 
 enum TransitionState {
@@ -18,7 +21,10 @@ enum TransitionState {
 }
 
 const Pages = {
+    // User Settings
     [SettingsPage.Account]: () => "coming soon",
+    [SettingsPage.Themes]: () => "coming soon",
+    // Miscellaneous
     [SettingsPage.About]: () => {
         const [curr, setCurr] = createSignal(0);
         const [last, setLast] = createSignal(0);
@@ -51,8 +57,18 @@ const Pages = {
             </h3>
         </div>
     },
-    [SettingsPage.Themes]: () => "coming soon"
-}
+    // Developer
+    [SettingsPage.Routes]: () => <div>
+        <h1 class="text-3xl font-bold">Routes</h1>
+        <h3 class="text-xl">Below is a list of a bunch of routes.</h3>
+        <div class="flex flex-col">
+            <A href="/" class="underline text-brand">Home</A>
+            <A href="/notfounderror" class="underline text-brand">Not Found Error</A>
+            <A href="/error" class="underline text-brand">UI Error / Component Crash</A>
+        </div>
+    </div>,
+    [SettingsPage.Components]: () => <div>coming soon(tm)</div>
+} satisfies Record<SettingsPage, () => JSX.Element>;
 
 export default function Settings(): JSX.Element {
     const [page, setPage] = createSignal(SettingsPage.Account);
@@ -92,6 +108,12 @@ export default function Settings(): JSX.Element {
             <Settings.Section>Miscellaneous</Settings.Section>
             <Settings.Item page={SettingsPage.About}>About Echoir</Settings.Item>
             <Settings.Separator />
+            {DEV && <>
+                <Settings.Section>Developer</Settings.Section>
+                <Settings.Item page={SettingsPage.Routes}>Routes</Settings.Item>
+                <Settings.Item page={SettingsPage.Components}>Components</Settings.Item>
+                <Settings.Separator />
+            </>}
             <div class="settings-version-info text-xs text-white/50 mb-1 px-2">
                 <p>Echoir {tauri.appVersion}{DEV && "@dev"} ({COMMIT_HASH})</p>
                 <p>Tauri {tauri.version}</p>

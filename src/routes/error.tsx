@@ -1,7 +1,7 @@
 import { A } from "@solidjs/router";
 import Page from "~/components/Page";
 
-export default function NotFound() {
+export default function Error() {
     return <Page title="UI Error" noBg>
         <div class="w-full h-full flex flex-col items-center justify-center">
             <h1 class="font-bold text-4xl">UI Error</h1>
