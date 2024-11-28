@@ -8,6 +8,7 @@ module.exports = {
         layer: "#121717",
         bgLayer: "#0B1110",
         brand: "#16A085",
+        brandDark: "#2A6453",
         muted: "#64706E",
       }
     }

@@ -1,4 +1,4 @@
-import { createResource, createSignal, DEV, JSX, onCleanup, ParentProps } from "solid-js";
+import { createSignal, DEV, JSX, onCleanup, ParentProps } from "solid-js";
 import { open, setOpen, SettingsContext } from "./settings_ctx";
 import * as tauri from "~/api/tauri";
 
