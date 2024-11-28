@@ -2,6 +2,8 @@ import { createSignal, DEV, JSX, onCleanup, ParentProps } from "solid-js";
 import { open, setOpen, SettingsContext } from "./settings_ctx";
 import * as tauri from "~/api/tauri";
 import { A } from "@solidjs/router";
+import Button from "./ui/Button";
+import LinkButton from "./ui/LinkButton";
 
 export { setOpen, SettingsContext };
 
@@ -61,13 +63,20 @@ const Pages = {
     [SettingsPage.Routes]: () => <div>
         <h1 class="text-3xl font-bold">Routes</h1>
         <h3 class="text-xl">Below is a list of a bunch of routes.</h3>
-        <div class="flex flex-col">
+        <div class="flex flex-col gap-2">
             <A href="/" class="underline text-brand">Home</A>
             <A href="/notfounderror" class="underline text-brand">Not Found Error</A>
             <A href="/error" class="underline text-brand">UI Error / Component Crash</A>
         </div>
     </div>,
-    [SettingsPage.Components]: () => <div>coming soon(tm)</div>
+    [SettingsPage.Components]: () => <div>
+        <h1 class="text-3xl font-bold">Components</h1>
+        <h3 class="text-xl">Below is a list of common UI components (<code>components/ui</code>).</h3>
+        <div class="flex flex-col gap-2 *:w-max">
+            <Button onClick={() => console.log("Button clicked!")}>{"<Button />"}</Button>
+            <LinkButton href="/" onClick={() => setOpen(false)}>{"<LinkButton />"}</LinkButton>
+        </div>
+    </div>,
 } satisfies Record<SettingsPage, () => JSX.Element>;
 
 export default function Settings(): JSX.Element {

@@ -1,5 +1,5 @@
-import { A } from "@solidjs/router";
 import Page from "~/components/Page";
+import LinkButton from "~/components/ui/LinkButton";
 
 export default function Error() {
     return <Page title="UI Error" noBg>
@@ -7,7 +7,7 @@ export default function Error() {
             <h1 class="font-bold text-4xl">UI Error</h1>
             <h3 class="flex flex-col items-center gap-1 mt-1">
                 <span class="text-muted">A component has crashed in Echoir and we need to reload.</span>
-                <A href="#" class="text-white px-5 py-2 bg-brandDark rounded-md" onClick={() => location.href = "/"}>Reload</A>
+                <LinkButton href="#">Reload</LinkButton>
             </h3>
         </div>
     </Page>

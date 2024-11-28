@@ -75,17 +75,17 @@ export default function Nav(): JSX.Element {
             </div>
         </div>
         <div class="window-controls flex gap-4">
-            <div class="window-control inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 scale-110" onClick={() => app.minimize()}>
+            <div class="window-control inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 hover:scale-110" onClick={() => app.minimize()}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Minimize">
                     <path d="M3.79688 10H16.1992" stroke="white" stroke-opacity="0.45" stroke-width="1.875" stroke-linecap="round" />
                 </svg>
             </div>
-            <div class="window-control inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 scale-110" onClick={() => app.toggleMaximize()}>
+            <div class="window-control inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 hover:scale-110" onClick={() => app.toggleMaximize()}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Maximize">
                     <rect x="3.06445" y="3.06348" width="13.8733" height="13.8733" rx="1.5625" stroke="white" stroke-opacity="0.45" stroke-width="1.875" />
                 </svg>
             </div>
-            <div class="window-control inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 scale-110" onClick={() => app.close()}>
+            <div class="window-control inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 hover:scale-110" onClick={() => app.close()}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Close">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.7638 10.2059L2.74414 16.2814L4.07607 17.6011L10.0836 11.5379L16.1528 17.6635L17.4848 16.3438L11.4033 10.2059L17.7309 3.81969L16.3989 2.5L10.0836 8.87394L3.82998 2.56238L2.49805 3.88207L8.7638 10.2059Z" fill="white" fill-opacity="0.45" />
                 </svg>
