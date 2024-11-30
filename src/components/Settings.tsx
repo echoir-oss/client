@@ -25,7 +25,7 @@ enum TransitionState {
 const Pages = {
     // User Settings
     [SettingsPage.Account]: () => "coming soon",
-    [SettingsPage.Themes]: () => "coming soon",
+    [SettingsPage.Themes]: () => "",    
     // Miscellaneous
     [SettingsPage.About]: () => {
         const [curr, setCurr] = createSignal(0);
@@ -108,7 +108,7 @@ export default function Settings(): JSX.Element {
     document.addEventListener("keyup", listener);
     onCleanup(() => document.removeEventListener("keyup", listener));
 
-    return <div class={`settings fixed flex gap-4 justify-center top-14 bg-bg w-screen h-[calc(100vh-4.25rem)] z-30 transition-all ease-out duration-200 ${open() ? "opacity-100 scale-100" : "opacity-0 scale-150 pointer-events-none"}`}>
+    return <div class={`settings fixed flex flex-grow gap-4 justify-center top-14 bg-bg h-[calc(100vh-4.25rem)] z-30 transition-all ease-out duration-200 ${open() ? "opacity-100 scale-100" : "opacity-0 scale-150 pointer-events-none"}`}>
         <aside class="settings-nav flex flex-col rounded-xl bg-bgLayer min-w-64 h-full p-4">
             <Settings.Section>User Settings</Settings.Section>
             <Settings.Item page={SettingsPage.Account}>Account</Settings.Item>
