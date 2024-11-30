@@ -12,7 +12,7 @@ export default function Page(props: ParentProps<{ title: string, noBg?: boolean 
     }}>
         <Title>{props.title} / Echoir</Title>
         <Nav />
-        <main class="pt-14 pl-4 pr-3 pb-3 h-screen flex gap-4">
+        <main class={`pt-14 pl-4 pr-3 pb-3 h-screen flex gap-4 transition-transform ease-out duration-200 ${useContext(SettingsContext).value[0]() ? "scale-75" : "scale-100"}`}>
             <div class="server-bar h-full w-16">
                 <A href="/" class="server-button home-button relative flex items-center justify-center h-16 w-16 bg-bgLayer rounded-xl">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 14 14" fill="none" class="home-icon">
@@ -22,10 +22,10 @@ export default function Page(props: ParentProps<{ title: string, noBg?: boolean 
                 </A>
             </div>
             <div class="dm-list rounded-xl bg-bgLayer min-w-64 h-full"></div>
-            <Settings />
             <div class={`primary-content p-4 rounded-xl ${props.noBg ? "" : "bg-bgLayer "}w-full h-full`}>
                 {props.children}
             </div>
         </main>
+        <Settings />
     </ErrorBoundary>
 }
