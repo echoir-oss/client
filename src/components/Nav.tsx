@@ -8,7 +8,7 @@ import { open } from "./settings_ctx";
 const app = tauri.window.getCurrentWindow();
 
 export default function Nav(): JSX.Element {
-    return <div data-tauri-drag-region class="navbar h-14 bg-bg select-none flex justify-between items-center px-6 fixed top-0 inset-x-0 z-50">
+    return <div data-tauri-drag-region class="navbar h-14 bg-bg select-none flex justify-between items-center px-6 fixed top-0 inset-x-0 z-[999]">
         {!open()
             ? <A href="/" class="echoir-icon">
                 <svg width="78" height="21" viewBox="0 0 78 21" fill="none" xmlns="http://www.w3.org/2000/svg">
