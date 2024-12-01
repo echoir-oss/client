@@ -1,4 +1,4 @@
-import { createSignal, JSX, ParentProps } from "solid-js";
+import { createSignal, JSX, onCleanup, ParentProps } from "solid-js";
 import { Portal } from "solid-js/web";
 
 export default function Popover(props: ParentProps<{ contents: (props: { close: () => void }) => JSX.Element, noPadding?: boolean }>): JSX.Element {
@@ -8,6 +8,8 @@ export default function Popover(props: ParentProps<{ contents: (props: { close: 
 
     // queueMicrotask will run **after the DOM has been rendered** at least in sync components.
     queueMicrotask(() => setRect(ref.getBoundingClientRect()));
+    const interval = setInterval(() => setRect(ref.getBoundingClientRect()), 100);
+    onCleanup(() => clearInterval(interval));
 
     return <div class="popover-wrapper">
         <div onClick={() => setRect(ref.getBoundingClientRect()) && setOpen(!open())} ref={ref}>{props.children}</div>
@@ -16,6 +18,6 @@ export default function Popover(props: ParentProps<{ contents: (props: { close: 
         </div>
         {open() && <Portal mount={document.body}>
             <div class="fixed top-0 left-0 w-screen h-screen z-[997]" onClick={() => setOpen(false)} />
-        </Portal> }
+        </Portal>}
     </div>
 }
