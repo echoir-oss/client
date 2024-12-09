@@ -43,8 +43,8 @@ const Pages = {
             }, 1000);
         }, 3000);
         onCleanup(() => clearInterval(interval));
-        return <div class="flex flex-col gap-2 justify-center w-full h-full">
-            <svg viewBox="0 0 78 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-12 w-fi" aria-label="Echoir logo">
+        return <div class="flex flex-col gap-2 justify-center items-center w-full h-full">
+            <svg viewBox="0 0 78 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-12 mb-1" aria-label="Echoir logo">
                 <path d="M12.1783 19.6855L6.27313 19.6939C6.25048 19.6928 6.204 19.713 6.18135 19.7118L1.75304 19.7069L1.70775 19.7045C1.43596 19.6903 1.22254 19.4292 1.21413 19.1563L1.21137 1.44135L1.21374 1.39605C1.22799 1.12426 1.49018 0.888177 1.76196 0.902421L5.89584 0.891962L5.98643 0.89671L12.0275 0.895362L12.0728 0.897736C12.3446 0.911979 12.5807 1.17418 12.5891 1.44715L12.5637 5.39758L12.5614 5.44288C12.5471 5.71467 12.2849 5.95075 12.012 5.95916L6.72064 5.95438L6.73181 7.90813L10.7859 8.1206C11.0577 8.13485 11.3176 8.37558 11.3021 8.67002L11.2998 8.71531L11.0729 12.1782C11.0336 12.4941 10.7941 12.7314 10.477 12.7148L6.71734 12.5178L6.7202 14.6301L12.2392 14.6241L12.2845 14.6264C12.5789 14.6419 12.815 14.9041 12.8007 15.1758L12.7528 19.1251C12.7373 19.4195 12.4966 19.6794 12.1783 19.6855Z" fill="white" />
                 <path d="M26.144 8.03766L25.0781 10.782C24.9874 11.0541 24.7379 11.2809 24.4658 11.2809C24.375 11.2809 24.2617 11.2356 24.1709 11.1675C23.7627 10.8273 22.9689 10.5778 22.1751 10.5778C21.5855 10.5778 19.6124 10.7139 19.6124 13.186C19.6124 14.7056 20.701 15.7035 22.1751 15.7035C23.1504 15.7035 24.2843 15.2726 25.3729 14.2747C25.509 14.1386 25.7131 14.0252 25.9173 14.0252C26.076 14.0252 26.2574 14.1159 26.4162 14.3881C26.8244 15.1592 27.0966 15.5675 27.4595 16.3159C27.5275 16.452 27.5729 16.6107 27.5729 16.7695C27.5729 17.0417 27.4595 17.2912 27.1873 17.5633C25.3503 19.3097 23.173 20.0808 21.1319 20.0808C17.3671 20.0808 14.0332 17.4499 14.0332 13.4582C14.0332 8.37786 18.0928 6.31396 21.8349 6.31396C24.3524 6.31396 26.1667 7.31189 26.1667 7.87889C26.1667 7.92425 26.1667 7.99229 26.144 8.03766Z" fill="white" />
                 <path d="M44.2539 18.0624L42.0993 19.8315C41.8499 20.0356 41.6231 20.1036 41.4189 20.1036C41.3282 20.1036 37.1325 19.3325 37.1325 14.7284C37.1325 11.9841 35.8625 11.0089 34.2295 11.0089H34.1161V19.2418C34.1161 19.5139 33.912 19.718 33.6626 19.718H29.1267C28.8545 19.718 28.6504 19.5139 28.6504 19.2418V0.689417C28.6504 0.439936 28.8545 0.213135 29.1267 0.213135H33.6626C33.912 0.213135 34.1161 0.439936 34.1161 0.689417V6.58625C34.3883 6.56357 34.6605 6.56357 34.9099 6.56357C39.1737 6.56357 42.5756 9.10375 42.6436 13.5944C42.6663 15.0686 42.9611 16.2026 44.0724 17.0872C44.2085 17.2006 44.458 17.4274 44.458 17.6768C44.458 17.7902 44.4126 17.9263 44.2539 18.0624Z" fill="white" />
@@ -57,6 +57,17 @@ const Pages = {
                 {state() !== TransitionState.None && <span class={`transition-transform duration-1000 w-full flex justify-center absolute left-0 top-0 ${state() === TransitionState.BeforeRun ? "translate-y-0" : "-translate-y-full"}`}>{messages[last()]}</span>}
                 <span class={`transition-transform duration-1000 w-full flex justify-center absolute left-0 top-0 ${state() === TransitionState.BeforeRun ? "translate-y-full invisible" : "translate-y-0"}`}>{messages[curr()]}</span>
             </h3>
+            <div class="mt-2">
+                crafted with &lt;3 by{" "}
+                <a href="https://github.com/WorriedArrow" target="_blank" rel="noopener noreferrer" class="text-brand underline">arrow</a>,{" "}
+                <a href="https://github.com/CurrentlyEmilia" target="_blank" rel="noopener noreferrer" class="text-brand underline">emilia</a>,{" "}
+                <a href="https://github.com/n1d3v" target="_blank" rel="noopener noreferrer" class="text-brand underline">pat</a>, and{" "}
+                <a href="https://github.com/echoir-oss" target="_blank" rel="noopener noreferrer" class="text-brand underline">contributors</a>!
+            </div>
+            <div class="mt-3 text-sm text-muted">
+                Echoir is{" "}
+                <a href="https://github.com/echoir-oss" target="_blank" rel="noopener noreferrer" class="text-brandDark underline">open source</a> and built on open source software.
+            </div>
         </div>
     },
     // Developer
