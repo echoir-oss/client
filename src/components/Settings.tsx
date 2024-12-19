@@ -12,9 +12,12 @@ enum SettingsPage {
     Account,
     Themes,
     About,
+    Licenses,
     Routes,
     Components
 }
+
+const [page, setPage] = createSignal(SettingsPage.Account);
 
 enum TransitionState {
     None,
@@ -25,7 +28,17 @@ enum TransitionState {
 const Pages = {
     // User Settings
     [SettingsPage.Account]: () => "coming soon",
-    [SettingsPage.Themes]: () => "",    
+    [SettingsPage.Themes]: () => <div>
+        <h1 class="text-3xl font-bold">Themes</h1>
+        <h3 class="text-xl mb-2">Manage your themes and custom styles for Echoir.</h3>
+        <div class="rounded-lg border px-2 py-1.5 border-white/25 w-fit">
+            <h3 class="text-sm text-muted font-bold mb-1">Actions</h3>
+            <div class="flex gap-2">
+                <Button slim>test</Button>
+                <Button slim>test again</Button>
+            </div>
+        </div>
+    </div>,
     // Miscellaneous
     [SettingsPage.About]: () => {
         const [curr, setCurr] = createSignal(0);
@@ -66,10 +79,37 @@ const Pages = {
             </div>
             <div class="mt-3 text-sm text-muted">
                 Echoir is{" "}
-                <a href="https://github.com/echoir-oss" target="_blank" rel="noopener noreferrer" class="text-brandDark underline">open source</a> and built on open source software.
+                <a href="https://github.com/echoir-oss" target="_blank" rel="noopener noreferrer" class="text-brandDark underline">open source</a> and built on <span onClick={() => setPage(SettingsPage.Licenses)} class="text-brandDark underline cursor-pointer">open source software</span>.
             </div>
         </div>
     },
+    [SettingsPage.Licenses]: () => <div>
+        <h1 class="text-3xl font-bold">Licenses</h1>
+        <h3 class="text-xl">Review the licenses of software and libraries used by Echoir.</h3>
+        <div class="flex flex-col gap-1">
+            <div>
+                <span class="font-bold">Echoir</span> / <span class="text-white/70">MIT license</span>
+            </div>
+            <div>
+                <a href="https://github.com/nksaraf/vinxi" target="_blank" rel="noopener noreferrer" class="text-brand underline font-bold">Vinxi</a> / <span class="text-white/70">MIT license</span>
+            </div>
+            <div>
+                <a href="https://github.com/vitejs/vite" target="_blank" rel="noopener noreferrer" class="text-brand underline font-bold">Vite</a> / <span class="text-white/70">MIT license</span>
+            </div>
+            <div>
+                <a href="https://github.com/nitrojs/nitro" target="_blank" rel="noopener noreferrer" class="text-brand underline font-bold">Nitro</a> / <span class="text-white/70">MIT license</span>
+            </div>
+            <div>
+                <a href="https://github.com/solidjs/solid" target="_blank" rel="noopener noreferrer" class="text-brand underline font-bold">SolidJS</a> / <span class="text-white/70">MIT license</span>
+            </div>
+            <div>
+                <a href="https://github.com/tailwindlabs/tailwindcss" target="_blank" rel="noopener noreferrer" class="text-brand underline font-bold">TailwindCSS</a> / <span class="text-white/70">MIT license</span>
+            </div>
+            <div>
+                <a href="https://github.com/tauri-apps/tauri" target="_blank" rel="noopener noreferrer" class="text-brand underline font-bold">Tauri</a> / <span class="text-white/70">MIT/Apache 2.0 license</span>
+            </div>
+        </div>
+    </div>,
     // Developer
     [SettingsPage.Routes]: () => <div>
         <h1 class="text-3xl font-bold">Routes</h1>
@@ -91,8 +131,6 @@ const Pages = {
 } satisfies Record<SettingsPage, () => JSX.Element>;
 
 export default function Settings(): JSX.Element {
-    const [page, setPage] = createSignal(SettingsPage.Account);
-
     const listener = (ev: KeyboardEvent) => {
         if(ev.key === "Escape") {
             ev.preventDefault();
@@ -127,6 +165,7 @@ export default function Settings(): JSX.Element {
             <Settings.Separator />
             <Settings.Section>Miscellaneous</Settings.Section>
             <Settings.Item page={SettingsPage.About}>About Echoir</Settings.Item>
+            <Settings.Item page={SettingsPage.Licenses}>Licenses</Settings.Item>
             <Settings.Separator />
             {DEV && <>
                 <Settings.Section>Developer</Settings.Section>
