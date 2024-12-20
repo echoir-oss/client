@@ -6,7 +6,7 @@
     "dev": "pnpx vinxi dev --port 6812",
     "build": "pnpx vinxi build",
     "start": "pnpx vinxi start",
-    "tauri": "pnpx tauri"
+    "tauri": "pnpx @tauri-apps/cli"
   },
   "dependencies": {
     "@solidjs/meta": "^0.29.4",
