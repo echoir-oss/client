@@ -7,7 +7,7 @@ import { open } from "./settings_ctx";
 
 const app = tauri.window.getCurrentWindow();
 
-export default function Nav(): JSX.Element {
+export default function Nav(props: { blank?: boolean }): JSX.Element {
     return <div data-tauri-drag-region class="navbar h-14 bg-bg select-none flex justify-between items-center px-6 fixed top-0 inset-x-0 z-[999]">
         {!open()
             ? <A href="/" class="echoir-icon">
@@ -27,7 +27,7 @@ export default function Nav(): JSX.Element {
                 </svg>
             </A>
         }
-        <div class="nav-center flex gap-2 items-center">
+        {!props.blank && <div class="nav-center flex gap-2 items-center">
             <Popover noPadding contents={({ close }) => <div class="user-popover flex flex-col gap-3 w-64">
                 <div class="user-popover-top relative">
                     <img class="absolute top-0 left-0 w-64" src="/banner.png" />
@@ -81,7 +81,7 @@ export default function Nav(): JSX.Element {
                     </svg>
                 </div>
             </div>
-        </div>
+        </div>}
         <div class="window-controls flex gap-4">
             <div class="window-control inline-flex justify-center items-center size-5 opacity-80 select-none cursor-pointer transition-[opacity,transform] duration-300 hover:opacity-100 hover:scale-110" onClick={() => app.minimize()}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Minimize">

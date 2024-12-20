@@ -8,6 +8,7 @@ export default function Home() {
             <A href="/notfound">Not Found Page</A>
             <A href="/error">UI Error Page</A>
             <A href="/chat-proto">Chat Prototype Page</A>
+            <A href="/auth/signin">Auth {">"} Sign In</A>
         </div>
     </Page>
 }
