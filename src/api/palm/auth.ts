@@ -5,7 +5,7 @@ export type LoginResult = {
     token: string | null,
 }
 export const login = async (email: string, password: string) => {
-    return await fetch<LoginResult>("/user/login", { email, password }, "POST");
+    return await fetch<LoginResult>("/user/login", { email, password }, "POST", true);
 }
 
 export type CreateResult = {
@@ -13,7 +13,7 @@ export type CreateResult = {
     token: string | null,
 }
 export const create = async (username: string, email: string, password: string) => {
-    return await fetch<CreateResult>("/user", { username, email, password }, "POST");
+    return await fetch<CreateResult>("/user", { username, email, password }, "POST", true);
 }
 
 export const setToken = async (token: string) => {

@@ -5,6 +5,7 @@ export type User = {
     joinDate: Date,
 }
 export type PreUser = Omit<User, "joinDate"> & { joinDate: string };
+export type HttpResult<T = Record<never, never>> = T & { $palm: { sc: number } };
 export const user = (user: PreUser): User => {
     return {
         ...user,

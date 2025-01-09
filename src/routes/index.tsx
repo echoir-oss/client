@@ -10,5 +10,9 @@ export default function Home() {
             <A href="/chat-proto">Chat Prototype Page</A>
             <A href="/auth/signin">Auth {">"} Sign In</A>
         </div>
+        <div class="flex flex-col text-5xl font-semibold items-center">
+            <span class="-mb-3">Welcome to</span>
+            <video src="/logo.webm" controls={false} autoplay class="h-28" />
+        </div>
     </Page>
 }
