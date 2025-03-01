@@ -3,7 +3,9 @@ import { open, setOpen, SettingsContext } from "./settings_ctx";
 import * as tauri from "~/api/tauri";
 import { A } from "@solidjs/router";
 import Button from "./ui/Button";
+import ButtonBack from "./ui/ButtonBack";
 import LinkButton from "./ui/LinkButton";
+import ButtonNotRecommended from "./ui/ButtonNotRecommended";
 
 export { setOpen, SettingsContext };
 
@@ -138,8 +140,8 @@ const Pages = {
             <h2 class="text-lg font-bold">Don't proceed if you don't know what you are doing!</h2>
             <p class="mb-2">3rd-party plugins are not verified by the Echoir team and may be dangerous. If you don't know what you are doing, it is better not to proceed. If you do know what you are doing, proceed with <span class="font-bold">caution.</span></p>
             <div class="button-box-warning flex flex-row gap-1">
-                <Button onClick={() => console.log("Button clicked!")}>{"Go back"}</Button>
-                <Button onClick={() => console.log("Button clicked!")}>{"Continue"}</Button>
+                <ButtonBack onClick={() => console.log("Button clicked!")}>{"Go back"}</ButtonBack>
+                <ButtonNotRecommended onClick={() => console.log("Button clicked!")}>{"Continue"}</ButtonNotRecommended>
             </div>
         </div>
     </div>

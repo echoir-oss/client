@@ -10,6 +10,8 @@ module.exports = {
         brand: "#16A085",
         brandDark: "#2A6453",
         muted: "#64706E",
+        buttonNotRecommended: "#D9534F",
+        buttonBack: "#333333"
       }
     }
   },
