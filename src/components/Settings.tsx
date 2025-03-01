@@ -14,7 +14,8 @@ enum SettingsPage {
     About,
     Licenses,
     Routes,
-    Components
+    Components,
+    ThirdPartyPlugins
 }
 
 const [page, setPage] = createSignal(SettingsPage.Account);
@@ -86,7 +87,7 @@ const Pages = {
     [SettingsPage.Licenses]: () => <div>
         <h1 class="text-3xl font-bold">Licenses</h1>
         <h3 class="text-xl">Review the licenses of software and libraries used by Echoir.</h3>
-        <div class="flex flex-col gap-1">
+        <div class="flex flex-col">
             <div>
                 <span class="font-bold">Echoir</span> / <span class="text-white/70">MIT license</span>
             </div>
@@ -128,6 +129,20 @@ const Pages = {
             <LinkButton href="/" onClick={() => setOpen(false)}>{"<LinkButton />"}</LinkButton>
         </div>
     </div>,
+    // 3rd-party plugins (Basically plugins we haven't verified)
+    [SettingsPage.ThirdPartyPlugins]: () => <div>
+        <div class="warning-box rounded-md flex flex-col items-center justify-center text-center p-4 w-[500px] bg-layer">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M43 41L24.5 8L6 41H43ZM25.4667 30.124L25.6333 18H23.3667L23.5333 30.124H25.4667ZM23.4417 34.5635C23.7361 34.8545 24.0889 35 24.5 35C24.7778 35 25.0278 34.9341 25.25 34.8023C25.4778 34.6651 25.6583 34.4838 25.7917 34.2587C25.9305 34.0336 26 33.7865 26 33.5174C26 33.1111 25.8528 32.7624 25.5583 32.4714C25.2639 32.1804 24.9111 32.0349 24.5 32.0349C24.0889 32.0349 23.7361 32.1804 23.4417 32.4714C23.1472 32.7624 23 33.1111 23 33.5174C23 33.9238 23.1472 34.2724 23.4417 34.5635Z" fill="white"/>
+            </svg>
+            <h2 class="text-lg font-bold">Don't proceed if you don't know what you are doing!</h2>
+            <p class="mb-2">3rd-party plugins are not verified by the Echoir team and may be dangerous. If you don't know what you are doing, it is better not to proceed. If you do know what you are doing, proceed with <span class="font-bold">caution.</span></p>
+            <div class="button-box-warning flex flex-row gap-1">
+                <Button onClick={() => console.log("Button clicked!")}>{"Go back"}</Button>
+                <Button onClick={() => console.log("Button clicked!")}>{"Continue"}</Button>
+            </div>
+        </div>
+    </div>
 } satisfies Record<SettingsPage, () => JSX.Element>;
 
 export default function Settings(): JSX.Element {
@@ -147,9 +162,17 @@ export default function Settings(): JSX.Element {
         </div>;
     const Section = (props: ParentProps) => <div class="settings-section-title text-sm text-muted font-semibold px-2 mb-1">{props.children}</div>;
     const Separator = () => <div class="settings-separator border-t-white/10 border-t m-2" />;
+    const SubItem = (props: ParentProps<{ page: SettingsPage }>) => 
+        <div
+            class={`settings-item cursor-pointer ${page() === props.page ? "bg-layer text-white text-xs" : "bg-transparent text-white/60 text-xs"} rounded-md transition-colors px-2 py-1`}
+            onClick={() => setPage(props.page)}
+        >
+            {props.children}
+        </div>;
 
     const Settings = {
         Item,
+        SubItem,
         Section,
         Separator
     };
@@ -161,7 +184,12 @@ export default function Settings(): JSX.Element {
         <aside class="settings-nav flex flex-col rounded-xl bg-bgLayer min-w-64 h-full p-4">
             <Settings.Section>User Settings</Settings.Section>
             <Settings.Item page={SettingsPage.Account}>Account</Settings.Item>
+            <Settings.Separator />
+            <Settings.Section>Customization</Settings.Section>
             <Settings.Item page={SettingsPage.Themes}>Themes</Settings.Item>
+            <Settings.Item page={SettingsPage.About}>Messages</Settings.Item>
+            <Settings.Item page={SettingsPage.About}>Plugins</Settings.Item>
+            <Settings.SubItem page={SettingsPage.ThirdPartyPlugins}>3rd-party plugins</Settings.SubItem>
             <Settings.Separator />
             <Settings.Section>Miscellaneous</Settings.Section>
             <Settings.Item page={SettingsPage.About}>About Echoir</Settings.Item>
