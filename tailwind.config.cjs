@@ -11,7 +11,8 @@ module.exports = {
         brandDark: "#2A6453",
         muted: "#64706E",
         buttonNotRecommended: "#D9534F",
-        buttonBack: "#333333"
+        buttonBack: "#333333",
+        linkColor: "#44ABFF"
       }
     }
   },
