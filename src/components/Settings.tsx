@@ -17,7 +17,8 @@ enum SettingsPage {
     About,
     Licenses,
     Routes,
-    Components
+    Components,
+    Messages
 }
 
 const [page, setPage] = createSignal(SettingsPage.Account);
@@ -80,7 +81,7 @@ const Pages = {
                 <a href="https://github.com/n1d3v" target="_blank" rel="noopener noreferrer" class="text-brand underline">pat</a>, and{" "}
                 <a href="https://github.com/echoir-oss" target="_blank" rel="noopener noreferrer" class="text-brand underline">contributors</a>!
             </div>
-            <div class="mt-3 text-sm text-muted">
+            <div class="mt-[-5px] text-sm text-muted">
                 Echoir is{" "}
                 <a href="https://github.com/echoir-oss" target="_blank" rel="noopener noreferrer" class="text-brandDark underline">open source</a> and built on <span onClick={() => setPage(SettingsPage.Licenses)} class="text-brandDark underline cursor-pointer">open source software</span>.
             </div>
@@ -133,6 +134,7 @@ const Pages = {
             <ButtonBack onClick={() => console.log("Button clicked!")}>{"<ButtonBack />"}</ButtonBack>
         </div>
     </div>,
+    // Customization
     [SettingsPage.Plugins]: () => <div>
         <h1>hi!!! this is still a wip arrow please add something here and a button for 3rd party plugins kthxbyeeee</h1>
         <div class="drop-shadow-lg">
@@ -149,6 +151,9 @@ const Pages = {
                 </div>
             </div>
         </div>
+    </div>,
+    [SettingsPage.Messages]: () => <div>
+        <p>work in progress</p>
     </div>
 } satisfies Record<SettingsPage, () => JSX.Element>;
 
@@ -194,7 +199,7 @@ export default function Settings(): JSX.Element {
             <Settings.Separator />
             <Settings.Section>Customization</Settings.Section>
             <Settings.Item page={SettingsPage.Themes}>Themes</Settings.Item>
-            <Settings.Item page={SettingsPage.About}>Messages</Settings.Item>
+            <Settings.Item page={SettingsPage.Messages}>Messages</Settings.Item>
             <Settings.Item page={SettingsPage.Plugins}>Plugins</Settings.Item>
             <Settings.Separator />
             <Settings.Section>Miscellaneous</Settings.Section>
