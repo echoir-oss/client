@@ -1,0 +1,14 @@
+{
+    // This is a simple build script for Tauri.
+    // It's easier than using PowerShell / CMD I guess?
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node-terminal",
+            "name": "Build and run application",
+            "request": "launch",
+            "command": "pnpm run tauri dev",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
