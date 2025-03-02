@@ -129,6 +129,8 @@ const Pages = {
         <div class="flex flex-col gap-2 *:w-max">
             <Button onClick={() => console.log("Button clicked!")}>{"<Button />"}</Button>
             <LinkButton href="/" onClick={() => setOpen(false)}>{"<LinkButton />"}</LinkButton>
+            <ButtonNotRecommended onClick={() => console.log("Button clicked!")}>{"<ButtonNotRecommended />"}</ButtonNotRecommended>
+            <ButtonBack onClick={() => console.log("Button clicked!")}>{"<ButtonBack />"}</ButtonBack>
         </div>
     </div>,
     // 3rd-party plugins (Basically plugins we haven't verified)
@@ -137,7 +139,7 @@ const Pages = {
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M43 41L24.5 8L6 41H43ZM25.4667 30.124L25.6333 18H23.3667L23.5333 30.124H25.4667ZM23.4417 34.5635C23.7361 34.8545 24.0889 35 24.5 35C24.7778 35 25.0278 34.9341 25.25 34.8023C25.4778 34.6651 25.6583 34.4838 25.7917 34.2587C25.9305 34.0336 26 33.7865 26 33.5174C26 33.1111 25.8528 32.7624 25.5583 32.4714C25.2639 32.1804 24.9111 32.0349 24.5 32.0349C24.0889 32.0349 23.7361 32.1804 23.4417 32.4714C23.1472 32.7624 23 33.1111 23 33.5174C23 33.9238 23.1472 34.2724 23.4417 34.5635Z" fill="white"/>
             </svg>
-            <h2 class="text-lg font-bold">Hey, watch out!</h2>
+            <h2 class="text-lg font-bold mb-1">Hey, watch out!</h2>
             <p class="mb-1">3rd-party plugins haven't been verified by the Echoir team and could be risky. If you're unsure, it's best not to continue. If you're confident in what you're doing, proceed with a bit of caution. If you're a developer, you can test your plugins here to make sure everything works as intended.</p>
             <A href="https://example.com" class="text-linkColor mb-2">More information can be found here</A> {/* Please replace this with an actual URL at some point! */}
             <div class="button-box-warning flex flex-row gap-1">
