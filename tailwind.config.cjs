@@ -12,7 +12,8 @@ module.exports = {
         muted: "#64706E",
         buttonNotRecommended: "#D9534F",
         buttonBack: "#333333",
-        linkColor: "#44ABFF"
+        linkColor: "#44ABFF",
+        tabBar: "#444444"
       }
     }
   },
