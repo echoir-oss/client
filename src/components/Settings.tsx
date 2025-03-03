@@ -6,6 +6,7 @@ import Button from "./ui/Button";
 import ButtonBack from "./ui/ButtonBack";
 import LinkButton from "./ui/LinkButton";
 import ButtonNotRecommended from "./ui/ButtonNotRecommended";
+import { Tab, TabBar } from "./ui/Tab";
 
 export { setOpen, SettingsContext };
 
@@ -136,21 +137,50 @@ const Pages = {
     </div>,
     // Customization
     [SettingsPage.Plugins]: () => <div>
-        <h1>hi!!! this is still a wip arrow please add something here and a button for 3rd party plugins kthxbyeeee</h1>
-        <div class="drop-shadow-lg">
-            <div class="warning-box rounded-md flex flex-col items-center justify-center text-center p-4 w-[500px] bg-layer">
-                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M26.2446 11.1119C25.4806 9.74927 23.5194 9.74926 22.7554 11.1119L7.66949 38.022C6.92211 39.3552 7.88567 41 9.41405 41H39.5859C41.1143 41 42.0779 39.3552 41.3305 38.022L26.2446 11.1119ZM25.4667 30.124L25.6333 18H23.3667L23.5333 30.124H25.4667ZM23.4417 34.5635C23.7361 34.8545 24.0889 35 24.5 35C24.7778 35 25.0278 34.9341 25.25 34.8023C25.4778 34.6651 25.6583 34.4838 25.7917 34.2587C25.9306 34.0336 26 33.7865 26 33.5174C26 33.1111 25.8528 32.7624 25.5583 32.4714C25.2639 32.1804 24.9111 32.0349 24.5 32.0349C24.0889 32.0349 23.7361 32.1804 23.4417 32.4714C23.1472 32.7624 23 33.1111 23 33.5174C23 33.9238 23.1472 34.2724 23.4417 34.5635Z" fill="white" />
-                </svg>
-                <h2 class="text-lg font-bold mb-1">Hey, watch out!</h2>
-                <p class="mb-1">3rd-party plugins haven't been verified by the Echoir team and could be risky. If you're unsure, it's best not to continue. If you're confident in what you're doing, proceed with a bit of caution. If you're a developer, you can test your plugins here to make sure everything works as intended.</p>
-                <A href="https://example.com" class="text-linkColor mb-2">More information can be found here</A> {/* Please replace this with an actual URL at some point! */}
-                <div class="button-box-warning flex flex-row gap-1">
-                    <ButtonBack onClick={() => console.log("Button clicked!")}>{"Go back"}</ButtonBack>
-                    <ButtonNotRecommended onClick={() => console.log("Button clicked!")}>{"Continue"}</ButtonNotRecommended>
+        <h1 class="text-3xl font-bold">Plugins</h1>
+        <h3 class="text-xl">Customize your client’s functionality with officially verified plugins!</h3>
+        <TabBar>
+            <Tab name="Official">
+                <div class="grid grid-cols-3 gap-3.5">
+                    <div class="flex flex-col justify-between bg-layer drop-shadow-lg rounded-md p-3 min-h-40 max-h-40">
+                        <div class="flex flex-col gap-1 px-2">
+                            <div class="flex items-end gap-1.5">
+                                <div class="font-semibold text-2xl">DiscordBridge</div>
+                                <div class="text-[15px] text-white/65 -translate-y-[3px] text-ellipsis line-clamp-1 break-all">by patricktbp</div>
+                            </div>
+                            <div class="text-ellipsis line-clamp-2">Add a bridge from Discord to the Echoir client with 100% functionality!</div>
+                        </div>
+                        <div class="flex justify-end gap-1">
+                            <button type="button" class="bg-buttonBack px-4 py-1 rounded-l rounded-r-sm border border-[#444] text-[15px]">
+                                Details
+                            </button>
+                            <button type="button" class="bg-buttonBack px-4 py-1 rounded-l-sm rounded-r border border-[#444] text-[15px]">
+                                Install
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </Tab>
+            <Tab name="Third-Party">
+                <div class="w-full flex justify-center">
+                    <div class="drop-shadow-lg">
+                        <div class="warning-box rounded-md flex flex-col items-center justify-center text-center px-8 py-4 w-[500px] bg-layer">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M26.2446 11.1119C25.4806 9.74927 23.5194 9.74926 22.7554 11.1119L7.66949 38.022C6.92211 39.3552 7.88567 41 9.41405 41H39.5859C41.1143 41 42.0779 39.3552 41.3305 38.022L26.2446 11.1119ZM25.4667 30.124L25.6333 18H23.3667L23.5333 30.124H25.4667ZM23.4417 34.5635C23.7361 34.8545 24.0889 35 24.5 35C24.7778 35 25.0278 34.9341 25.25 34.8023C25.4778 34.6651 25.6583 34.4838 25.7917 34.2587C25.9306 34.0336 26 33.7865 26 33.5174C26 33.1111 25.8528 32.7624 25.5583 32.4714C25.2639 32.1804 24.9111 32.0349 24.5 32.0349C24.0889 32.0349 23.7361 32.1804 23.4417 32.4714C23.1472 32.7624 23 33.1111 23 33.5174C23 33.9238 23.1472 34.2724 23.4417 34.5635Z" fill="white" />
+                            </svg>
+                            <h2 class="text-lg font-bold mb-1">Hey, watch out!</h2>
+                            <p class="mb-1">Third-party plugins haven't been verified by the Echoir team and could be risky. If you're unsure, it's best not to continue. If you're confident in what you're doing, proceed with a bit of caution. If you're a developer, you can test your plugins here to make sure everything works as intended.</p>
+                            <A href="https://example.com" class="text-linkColor mb-2">More information can be found here</A> {/* Please replace this with an actual URL at some point! */}
+                            <div class="button-box-warning flex flex-row gap-1">
+                                <ButtonBack onClick={() => console.log("Button clicked!")}>{"Go back"}</ButtonBack>
+                                <ButtonNotRecommended onClick={() => console.log("Button clicked!")}>{"Continue"}</ButtonNotRecommended>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Tab>
+        </TabBar>
+        
     </div>,
     [SettingsPage.Messages]: () => <div>
         <p>work in progress</p>
@@ -218,7 +248,7 @@ export default function Settings(): JSX.Element {
                 <p>System: {tauri.systemInfo}</p>
             </div>
         </aside>
-        <div class="settings-page w-full rounded-xl p-4 bg-bgLayer h-full overflow-x-hidden overflow-y-auto">
+        <div class="settings-page w-full h-full rounded-xl p-4 bg-bgLayer overflow-x-hidden overflow-y-auto">
             {Pages[page()]()}
         </div>
     </div>
