@@ -136,9 +136,9 @@ const Pages = {
         </div>
     </div>,
     // Customization
-    [SettingsPage.Plugins]: () => <div class="m-4 h-full">
+    [SettingsPage.Plugins]: () => <div class="h-[calc(100%-3.5rem)]">
         <h1 class="text-3xl font-bold">Plugins</h1>
-        <h3 class="text-xl opacity-90 mb-2">Customize your client’s functionality with officially verified plugins!</h3>
+        <h3 class="text-xl mb-2">Customize your client’s functionality with officially verified plugins!</h3>
         <TabBar>
             <Tab name="Official">
                 <div class="grid grid-cols-3 gap-3.5">
@@ -162,7 +162,7 @@ const Pages = {
                 </div>
             </Tab>
             <Tab name="Third-Party">
-                <div class="w-full flex justify-center items-center h-screen">
+                <div class="w-full flex justify-center items-center h-full">
                     <div class="drop-shadow-lg">
                         <div class="warning-box rounded-md flex flex-col items-center justify-center text-center px-8 py-4 w-[500px] bg-layer">
                             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -248,7 +248,7 @@ export default function Settings(): JSX.Element {
                 <p>System: {tauri.systemInfo}</p>
             </div>
         </aside>
-        <div class="settings-page w-full h-full rounded-xl p-4 bg-bgLayer overflow-x-hidden overflow-y-auto">
+        <div class="settings-page w-full h-[calc(100vh-3.5rem)] rounded-xl p-4 bg-bgLayer overflow-x-hidden overflow-y-auto">
             {Pages[page()]()}
         </div>
     </div>
