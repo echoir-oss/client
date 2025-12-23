@@ -7,15 +7,15 @@ import { SettingsProvider } from "./components/Settings";
 
 export default function App() {
     return (
-        <Router root={props => (
-            <Suspense>
-                <MetaProvider>
-                    <SettingsProvider>
-                        {props.children}
-                    </SettingsProvider>
-                </MetaProvider>
-            </Suspense>
-        )}>
+        <Router
+            root={(props) => (
+                <Suspense>
+                    <MetaProvider>
+                        <SettingsProvider>{props.children}</SettingsProvider>
+                    </MetaProvider>
+                </Suspense>
+            )}
+        >
             <FileRoutes />
         </Router>
     );

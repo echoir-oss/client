@@ -1,8 +1,8 @@
 // MIT License - From tdous/star-field-canvas
-import { AnimLoopEngine } from 'anim-loop-engine';
+import { AnimLoopEngine } from "anim-loop-engine";
 
-import { Star } from './Star';
-import { defaultColor, StarColorObj } from './starColor';
+import { Star } from "./Star";
+import { defaultColor, StarColorObj } from "./starColor";
 
 type StarFieldOpts = {
     followMouse?: boolean;
@@ -53,7 +53,7 @@ export class StarField {
     trails: boolean;
 
     setV(v: number) {
-        this.stars.forEach(star => star.setV(v));
+        this.stars.forEach((star) => star.setV(v));
     }
 
     constructor(canvasId: string, opts: StarFieldOpts = {}) {
@@ -69,7 +69,7 @@ export class StarField {
         this.trails = opts.trails || false;
 
         this.canvas = document.getElementById(canvasId) as HTMLCanvasElement;
-        this.ctx = this.canvas.getContext('2d');
+        this.ctx = this.canvas.getContext("2d");
         const rect = this.canvas.getBoundingClientRect();
         this.canvasRectLeft = rect.left;
         this.canvasRectTop = rect.top;
@@ -84,13 +84,13 @@ export class StarField {
         this.engine.addTask(this.draw.bind(this));
 
         // Window event - on resize to reinitialize canvas, all stars and animation
-        window.addEventListener('resize', () => {
-            clearTimeout(this.resizeTimeout)
+        window.addEventListener("resize", () => {
+            clearTimeout(this.resizeTimeout);
             this.stop();
             this.resizeTimeout = window.setTimeout(() => {
                 this.reset();
                 this.start();
-            }, 500)
+            }, 500);
         });
 
         // Did config set a number of stars?
@@ -129,8 +129,8 @@ export class StarField {
                     color: this.color,
                     glow: this.glow,
                     trails: this.trails,
-                    addTasks: this.engine.addTasks
-                })
+                    addTasks: this.engine.addTasks,
+                }),
             );
         }
     }
@@ -139,8 +139,8 @@ export class StarField {
     private setupCanvas() {
         const canvasStyle: any = window.getComputedStyle(this.canvas);
 
-        this.canvas.setAttribute('height', canvasStyle.height);
-        this.canvas.setAttribute('width', canvasStyle.width);
+        this.canvas.setAttribute("height", canvasStyle.height);
+        this.canvas.setAttribute("width", canvasStyle.width);
 
         // canvasH/W/canvasHalfH/W used here and set to use elsewhere
         this.canvasH = this.canvas.height;
@@ -164,7 +164,7 @@ export class StarField {
             -this.canvasHalfW,
             -this.canvasHalfH,
             this.canvasW,
-            this.canvasH
+            this.canvasH,
         );
 
         for (let i in this.stars) {
@@ -218,9 +218,15 @@ export class StarField {
     }
     setFollowMouse(val: boolean) {
         if (val) {
-            this.followContext.addEventListener('mousemove', this.handleMouseMove);
+            this.followContext.addEventListener(
+                "mousemove",
+                this.handleMouseMove,
+            );
         } else {
-            this.followContext.removeEventListener('mousemove', this.handleMouseMove);
+            this.followContext.removeEventListener(
+                "mousemove",
+                this.handleMouseMove,
+            );
             this.resetMouseOffset();
         }
     }

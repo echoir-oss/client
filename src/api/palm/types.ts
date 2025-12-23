@@ -1,14 +1,16 @@
 export type User = {
-    id: bigint,
-    username_internal: string,
-    username: string,
-    joinDate: Date,
-}
+    id: bigint;
+    username_internal: string;
+    username: string;
+    joinDate: Date;
+};
 export type PreUser = Omit<User, "joinDate"> & { joinDate: string };
-export type HttpResult<T = Record<never, never>> = T & { $palm: { sc: number } };
+export type HttpResult<T = Record<never, never>> = T & {
+    $palm: { sc: number };
+};
 export const user = (user: PreUser): User => {
     return {
         ...user,
-        joinDate: new Date(user.joinDate)
+        joinDate: new Date(user.joinDate),
     };
-}
+};

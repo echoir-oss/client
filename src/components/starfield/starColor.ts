@@ -8,5 +8,5 @@ export type StarColorObj = {
 export const defaultColor = {
     r: 255,
     b: 255,
-    g: 255
+    g: 255,
 };

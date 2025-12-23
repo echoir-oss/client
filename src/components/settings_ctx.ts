@@ -5,4 +5,6 @@
 import { createContext, createSignal, Signal } from "solid-js";
 
 export const [open, setOpen] = createSignal(false);
-export const SettingsContext = createContext({ value: [open, setOpen] as Signal<boolean> });
+export const SettingsContext = createContext({
+    value: [open, setOpen] as Signal<boolean>,
+});

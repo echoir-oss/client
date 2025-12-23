@@ -1,7 +1,7 @@
 // MIT License - From tdous/star-field-canvas
-import { mapNumberToRange } from 'map-number-to-range';
+import { mapNumberToRange } from "map-number-to-range";
 
-import { defaultColor, StarColorObj } from './starColor';
+import { defaultColor, StarColorObj } from "./starColor";
 
 type StarOpts = {
     ctx: any;
@@ -41,19 +41,8 @@ export class Star {
     addTasks: Function;
 
     constructor(opts: StarOpts) {
-        const {
-            ctx,
-            W,
-            H,
-            hW,
-            hH,
-            minV,
-            maxV,
-            color,
-            glow,
-            trails,
-            addTasks
-        } = opts;
+        const { ctx, W, H, hW, hH, minV, maxV, color, glow, trails, addTasks } =
+            opts;
 
         this.ctx = ctx;
         this.W = W;
@@ -113,7 +102,7 @@ export class Star {
         if (this.glow) {
             this.ctx.save();
             this.ctx.shadowBlur = 5;
-            this.ctx.shadowColor = '#FFF';
+            this.ctx.shadowColor = "#FFF";
         }
 
         // Draw the star
@@ -137,7 +126,7 @@ export class Star {
         // Define a new random position within the canvas, velocity, and radius
         this.x = Math.random() * this.W - this.hW;
         this.y = Math.random() * this.H - this.hH;
-        if(init) {
+        if (init) {
             this.v = Math.random() * (this.maxV - this.minV) + this.minV;
         }
         this.radius = Number((Math.random() * 2 + 1).toPrecision(3));
@@ -147,7 +136,12 @@ export class Star {
         this.lastY = this.y;
 
         // If not init (ie. not first run), send randomly far back, otherwise randomize
-        this.z = !init ? Math.min((Math.random() * (this.getInitialZ() - 400)) + 400, this.getInitialZ()) : Math.random() * this.getInitialZ();
+        this.z = !init
+            ? Math.min(
+                  Math.random() * (this.getInitialZ() - 400) + 400,
+                  this.getInitialZ(),
+              )
+            : Math.random() * this.getInitialZ();
     }
 
     setV(v: number) {
