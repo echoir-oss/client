@@ -1,15 +1,8 @@
 import createTween from "@solid-primitives/tween";
 import { Title } from "@solidjs/meta";
 import Cropper from "cropperjs";
-import {
-    createEffect,
-    createMemo,
-    createSignal,
-    on,
-    onCleanup,
-    onMount,
-} from "solid-js";
-import { isServer, Portal } from "solid-js/web";
+import { createEffect, createSignal, onCleanup, onMount } from "solid-js";
+import { Portal } from "solid-js/web";
 import Nav from "~/components/Nav";
 import * as starfield from "~/components/starfield";
 import Button from "~/components/ui/Button";
@@ -89,7 +82,7 @@ export default function Welcome() {
     const steps = [
         () => (
             <>
-                <h1 class="text-3xl font-bold">Welcome to Echoir!</h1>
+                <h1 class="font-bold text-3xl">Welcome to Echoir!</h1>
                 <span class="text-muted text-center">
                     Let's set up your profile so you can start connecting.
                 </span>
@@ -102,11 +95,11 @@ export default function Welcome() {
         ),
         () => (
             <>
-                <h1 class="text-3xl font-bold">What's your username?</h1>
+                <h1 class="font-bold text-3xl">What's your username?</h1>
                 <span class="text-muted text-center">
                     Choose something good... or don't, I won't judge. Promise.
                 </span>
-                <span class="text-sm text-muted/70">
+                <span class="text-muted/70 text-sm">
                     Up to 16 letters, numbers, and dots
                 </span>
                 <form
@@ -118,7 +111,7 @@ export default function Welcome() {
                         value={value()}
                         type="text"
                         onChange={(ev) => setValue(ev.target.value)}
-                        class="bg-layer text-white text-sm py-1.5 px-3 mt-2 w-64 rounded-lg outline-none placeholder:text-muted shadow-[inset_0_-2px_0_0_transparent] focus:shadow-[inset_0_-2px_0_0_#16A085] focus:outline-none focus:ring-0 focus:border-transparent transition-shadow duration-200"
+                        class="bg-layer shadow-[inset_0_-2px_0_0_transparent] focus:shadow-[inset_0_-2px_0_0_#16A085] mt-2 px-3 py-1.5 focus:border-transparent rounded-lg outline-none focus:outline-none focus:ring-0 w-64 text-white placeholder:text-muted text-sm transition-shadow duration-200"
                     />
                     <Button type="submit">Next</Button>
                 </form>
@@ -155,14 +148,14 @@ export default function Welcome() {
             );
             return (
                 <>
-                    <h1 class="text-3xl font-bold">
+                    <h1 class="font-bold text-3xl">
                         Upload your profile picture.
                     </h1>
                     <span class="text-muted text-center">
                         Or I can just slap on a default avatar and call it a
                         day. Your choice.
                     </span>
-                    <span class="text-sm text-muted/70">
+                    <span class="text-muted/70 text-sm">
                         64x64 to 1024x1024
                     </span>
                     <form
@@ -177,20 +170,20 @@ export default function Welcome() {
                             onChange={(ev) =>
                                 setFile((ev.target.files ?? [])[0])
                             }
-                            class="bg-layer text-white text-sm py-1.5 px-2 mt-2 w-64 rounded-lg outline-none placeholder:text-muted file:rounded-md file:mr-2 file:border-0 file:bg-brand hover:file:bg-brandDark file:text-white file:transition-colors file:!px-1.5 file:!py-1 focus:outline-none focus:ring-0 focus:border-transparent"
+                            class="bg-layer hover:file:bg-brandDark file:bg-brand mt-2 file:mr-2 px-2 file:!px-1.5 py-1.5 file:!py-1 focus:border-transparent file:border-0 rounded-lg file:rounded-md outline-none focus:outline-none focus:ring-0 w-64 text-white placeholder:text-muted file:text-white text-sm file:transition-colors"
                         />
                         <Button type="submit">Next</Button>
                     </form>
                     {open() && (
                         <Portal mount={document.body}>
                             <div
-                                class="fixed top-0 bg-black/60 pointer-events-auto w-screen h-screen z-10"
+                                class="top-0 z-10 fixed bg-black/60 w-screen h-screen pointer-events-auto"
                                 onClick={() => setOpen(false)}
                             />
-                            <div class="fixed top-0 w-screen h-screen grid place-items-center pointer-events-none z-20">
-                                <div class="bg-black rounded-lg px-8 py-6 flex flex-col z-20 pointer-events-auto">
+                            <div class="top-0 z-20 fixed place-items-center grid w-screen h-screen pointer-events-none">
+                                <div class="z-20 flex flex-col bg-black px-8 py-6 rounded-lg pointer-events-auto">
                                     <div class="flex justify-between items-center w-full">
-                                        <h1 class="text-2xl font-bold">
+                                        <h1 class="font-bold text-2xl">
                                             Crop image
                                         </h1>
                                         <svg
@@ -262,7 +255,7 @@ export default function Welcome() {
         <>
             <Title>Welcome to Echoir / Echoir</Title>
             <Nav blank />
-            <div class="fixed w-screen h-screen grid place-items-center pointer-events-none">
+            <div class="fixed place-items-center grid w-screen h-screen pointer-events-none">
                 <div
                     class={`bg-black/10 backdrop-blur-sm rounded-lg border border-muted px-8 py-6 flex flex-col items-center transition-opacity duration-300 ${inAnim() ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"}`}
                 >

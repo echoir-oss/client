@@ -15,7 +15,7 @@ export default function Home() {
                 <A href="/welcome">Welcome Page</A>
                 <A href="/auth/signin">Auth {">"} Sign In</A>
             </div>
-            <div class="flex flex-col text-5xl font-semibold items-center">
+            <div class="flex flex-col items-center font-semibold text-5xl">
                 <span class="-mb-3">Welcome to</span>
                 <video
                     src="/logo.webm"

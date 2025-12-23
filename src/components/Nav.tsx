@@ -1,5 +1,5 @@
 import { A, useLocation } from "@solidjs/router";
-import { JSX } from "solid-js";
+import type { JSX } from "solid-js";
 import * as tauri from "~/api/tauri";
 import Popover from "./Popover";
 import { setOpen } from "./Settings";

@@ -1,4 +1,5 @@
 export * from "@tauri-apps/api";
+
 import * as tauri from "@tauri-apps/api";
 
 export const appVersion = await tauri.app.getVersion();

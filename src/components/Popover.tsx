@@ -1,4 +1,4 @@
-import { createSignal, JSX, onCleanup, ParentProps } from "solid-js";
+import { createSignal, type JSX, onCleanup, type ParentProps } from "solid-js";
 import { Portal } from "solid-js/web";
 
 export default function Popover(
@@ -8,7 +8,7 @@ export default function Popover(
     }>,
 ): JSX.Element {
     const [open, setOpen] = createSignal(false);
-    let ref: HTMLDivElement = void 0 as any;
+    const ref: HTMLDivElement = void 0 as any;
     const [rect, setRect] = createSignal(null as unknown as DOMRect);
 
     // queueMicrotask will run **after the DOM has been rendered** at least in sync components.

@@ -1,5 +1,5 @@
 import { Title } from "@solidjs/meta";
-import { A, redirect, useNavigate } from "@solidjs/router";
+import { A, useNavigate } from "@solidjs/router";
 import { createSignal } from "solid-js";
 import * as palm from "~/api/palm";
 import Nav from "~/components/Nav";
@@ -27,7 +27,7 @@ export default function SignIn() {
     const [error, setError] = createSignal("");
     let email = "";
     let password = "";
-    let twoFA = "";
+    const twoFA = "";
     const nav = useNavigate();
     const update = async () => {
         setError("");
@@ -58,11 +58,11 @@ export default function SignIn() {
         <>
             <Title>Sign in / Echoir</Title>
             <Nav blank />
-            <div class="flex flex-col items-center justify-center h-screen">
-                <h1 class="font-bold text-4xl mb-0.5">Sign in to Echoir</h1>
-                <h3 class="text-muted mb-1">Welcome back, adventurer!</h3>
+            <div class="flex flex-col justify-center items-center h-screen">
+                <h1 class="mb-0.5 font-bold text-4xl">Sign in to Echoir</h1>
+                <h3 class="mb-1 text-muted">Welcome back, adventurer!</h3>
                 {error() && (
-                    <span class="text-red-500 text-sm mb-2">{error()}</span>
+                    <span class="mb-2 text-red-500 text-sm">{error()}</span>
                 )}
                 <form
                     class="contents"
@@ -83,11 +83,11 @@ export default function SignIn() {
                         onChange={(ev) => setValue(ev.target.value)}
                         class={`bg-layer text-white text-sm py-1.5 px-3 mb-2 w-64 rounded-lg outline-none placeholder:text-muted shadow-[inset_0_-2px_0_0_transparent] focus:shadow-[inset_0_-2px_0_0_#16A085] focus:outline-none focus:ring-0 focus:border-transparent transition-shadow duration-200${Placeholders[state()] === "" ? " cursor-not-allowed shadow-[inset_0_-2px_0_0_transparent]" : ""}`}
                     />
-                    <div class="text-muted text-sm mb-2">
+                    <div class="mb-2 text-muted text-sm">
                         Don't have an account?{" "}
                         <A
                             href="/auth/signup"
-                            class="text-brandDark cursor-pointer underline"
+                            class="text-brandDark underline cursor-pointer"
                         >
                             Sign up today!
                         </A>

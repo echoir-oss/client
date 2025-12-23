@@ -1,6 +1,6 @@
 import { createCache, createRootCache } from "./cache";
 import { fetch } from "./fetch";
-import { PreUser, User, user as typesUser } from "./types";
+import { type PreUser, user as typesUser, type User } from "./types";
 
 export const meCache = createCache(async () =>
     typesUser(await fetch<PreUser>("/user/@me", undefined, undefined, true)),

@@ -1,0 +1,10 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.organizeImports.biome": "explicit",
+        "source.fixAll.biome": "explicit",
+        "source.removeUnusedImports": "explicit"
+    },
+    "editor.detectIndentation": false,
+    "css.customData": [".vscode/tailwind.json"],
+    "css.lint.unknownAtRules": "ignore"
+}

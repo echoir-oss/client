@@ -1,11 +1,17 @@
-import { createSignal, DEV, JSX, onCleanup, ParentProps } from "solid-js";
-import { open, setOpen, SettingsContext } from "./settings_ctx";
-import * as tauri from "~/api/tauri";
 import { A } from "@solidjs/router";
+import {
+    createSignal,
+    DEV,
+    type JSX,
+    onCleanup,
+    type ParentProps,
+} from "solid-js";
+import * as tauri from "~/api/tauri";
+import { open, SettingsContext, setOpen } from "./settings_ctx";
 import Button from "./ui/Button";
 import ButtonBack from "./ui/ButtonBack";
-import LinkButton from "./ui/LinkButton";
 import ButtonNotRecommended from "./ui/ButtonNotRecommended";
+import LinkButton from "./ui/LinkButton";
 import { Tab, TabBar } from "./ui/Tab";
 
 export { setOpen, SettingsContext };

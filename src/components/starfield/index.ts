@@ -2,7 +2,7 @@
 import { AnimLoopEngine } from "anim-loop-engine";
 
 import { Star } from "./Star";
-import { defaultColor, StarColorObj } from "./starColor";
+import { defaultColor, type StarColorObj } from "./starColor";
 
 type StarFieldOpts = {
     followMouse?: boolean;
@@ -167,7 +167,7 @@ export class StarField {
             this.canvasH,
         );
 
-        for (let i in this.stars) {
+        for (const i in this.stars) {
             this.stars[i].draw(this.offsetX, this.offsetY);
         }
     }

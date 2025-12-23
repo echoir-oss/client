@@ -1,17 +1,17 @@
+import { Title } from "@solidjs/meta";
+import { A, Navigate, useLocation, useNavigate } from "@solidjs/router";
 import {
     createEffect,
     createResource,
     ErrorBoundary,
-    JSX,
-    ParentProps,
+    type JSX,
+    type ParentProps,
     Show,
     useContext,
 } from "solid-js";
-import Nav from "./Nav";
-import { Title } from "@solidjs/meta";
-import { A, Navigate, useLocation, useNavigate } from "@solidjs/router";
-import Settings, { SettingsContext } from "./Settings";
 import * as palm from "~/api/palm";
+import Nav from "./Nav";
+import Settings, { SettingsContext } from "./Settings";
 
 export default function Page(
     props: ParentProps<{ title: string; noBg?: boolean; unauthed?: boolean }>,

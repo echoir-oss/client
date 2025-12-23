@@ -3,7 +3,7 @@ export type Cache<T> = {
     invalidate: (value: T) => void;
 };
 export const createCache = <T>(value: () => Promise<T>): Cache<T> => {
-    let initialized: T | undefined = undefined;
+    let initialized: T | undefined;
     const cache: Cache<T> = {
         value: async () => (initialized ??= await value()),
         invalidate: (value) => (initialized = value),

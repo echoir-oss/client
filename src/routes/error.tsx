@@ -4,8 +4,8 @@ import Button from "~/components/ui/Button";
 export default function Error() {
     return (
         <Page title="UI Error" noBg unauthed>
-            <div class="w-full h-full flex flex-col items-center justify-center">
-                <div class="flex flew-row items-center gap-1">
+            <div class="flex flex-col justify-center items-center w-full h-full">
+                <div class="flex items-center gap-1 flew-row">
                     <svg
                         width="50"
                         height="50"
@@ -23,7 +23,7 @@ export default function Error() {
                     <h1 class="font-bold text-4xl">UI Error</h1>
                 </div>
                 <h3 class="flex flex-col items-center gap-1 mt-1">
-                    <span class="text-muted mb-2">
+                    <span class="mb-2 text-muted">
                         A component has crashed in Echoir and we need to reload.
                     </span>
                     <Button onClick={() => (location.href = "/")}>

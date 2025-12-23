@@ -32,8 +32,8 @@ export const on = <T extends WSEventType>(
     event: T,
     listener: (ev: WSEvent<T>) => void,
 ) => {
-    let internalListener = (ev: MessageEvent<string>) => {
-        let message: WSEvent<T> = JSON.parse(ev.data);
+    const internalListener = (ev: MessageEvent<string>) => {
+        const message: WSEvent<T> = JSON.parse(ev.data);
         if (message.type === event) listener(message);
     };
     ws.addEventListener("message", internalListener);

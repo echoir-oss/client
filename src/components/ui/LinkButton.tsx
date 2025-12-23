@@ -1,4 +1,4 @@
-import { A, AnchorProps } from "@solidjs/router";
+import { A, type AnchorProps } from "@solidjs/router";
 
 export default function LinkButton(props: AnchorProps & { slim?: boolean }) {
     return (

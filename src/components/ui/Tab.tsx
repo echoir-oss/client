@@ -1,4 +1,10 @@
-import { createMemo, createSignal, For, JSX, ParentProps } from "solid-js";
+import {
+    createMemo,
+    createSignal,
+    For,
+    type JSX,
+    type ParentProps,
+} from "solid-js";
 
 export function TabBar(props: { children: JSX.Element }): JSX.Element {
     const [selected, setSelected] = createSignal(0);
